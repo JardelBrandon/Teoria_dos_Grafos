@@ -19,7 +19,9 @@ from grafo import Grafo
 
 
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
-arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E", "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M", "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
+arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
+           "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
+           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
 
 grafo_Paraiba = Grafo(vertices, arestas)
 print(grafo_Paraiba)

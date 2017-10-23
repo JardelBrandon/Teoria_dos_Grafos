@@ -17,10 +17,9 @@ obs.: Você não deve fazer quaisquer modificações em grafo.py
 '''
 from grafo import Grafo
 
-N = {'J', 'C', 'E', 'P', 'M', 'T', 'Z'}
-#A = {'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9'}
-#A = {"g(a1)", "J-C", "g(a2)", "C-E", "g(a3)", "C-E", "g(a4)", "C-P", "g(a5)", "C-P", "g(a6)", "C-M", "g(a7)", "C-T", "g(a8)", "M-T", "g(a9)", "T-Z"}
-A = {'g(a1)', 'J - C'}
 
-grafo_Paraiba = Grafo(N, A)
-print (grafo_Paraiba)
+vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E", "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M", "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
+
+grafo_Paraiba = Grafo(vertices, arestas)
+print(grafo_Paraiba)

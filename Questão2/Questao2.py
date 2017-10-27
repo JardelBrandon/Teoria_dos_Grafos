@@ -30,11 +30,46 @@ f) Você deve tratar problemas com a formatação da entrada
 from grafo import Grafo
 
 
-def receberVertices()
-    input("Digite os vértices do grafo:\nDevem seguir o seguinte formato:(J, C, E, P, M, T, Z) :")
-    listaVertices = [str(x) for x in input().split(',')]
+def receberVertices():
+    entradaVertices = input("Digite os vértices do grafo\nDevem seguir o seguinte formato -> J, C, E, P, M, T, Z, ... :\n")
+    listaVertices = tratamentoVertices(entradaVertices)
     return listaVertices
 
+def tratamentoVertices(vertices):
+    vertices = vertices.replace(' ', '')
+    vertices = vertices.split(',')
+    return vertices
 
-grafoInformado = Grafo
+def receberArestas():
+    entradaArestas = input("Digite as arestas do grafo\nDevem seguir o seguinte formato -> a1(J-C), a2(C-E), a3(C-E), ... :\n")
+    listaArestas = tratamentoArestas(entradaArestas)
+    dicionarioArestas = criarDicionarioArestas(listaArestas)
+    return dicionarioArestas
+
+
+def tratamentoArestas(arestas):
+    ultimoParenteses = (arestas.count('(') - 1)
+    arestas = arestas.replace(')', '(', ultimoParenteses)
+    arestas = arestas. replace(')', '')
+    arestas = arestas.replace(',', '')
+    arestas = arestas.replace(' ', '')
+    arestas = arestas.split('(')
+    return arestas
+
+def criarDicionarioArestas(listaArestas):
+    dicionarioArestas = dict()
+    for i in range(0, (len(listaArestas) - 1), 2):
+            dicionarioArestas[listaArestas[i]] = listaArestas[(i + 1)]
+    return dicionarioArestas
+
+
+
+try:
+    grafoInformado = Grafo(receberVertices(), receberArestas())
+except:
+    print ("O grafo informado apresenta algum erro de entrada.\n"
+            "Por favor, atente-se para seguir o seguinte padrão:\n"
+            "Vertices -> J, C, E, P, M, T, Z, ...\n"
+            "Arestas -> a1(J-C), a2(C-E), a3(C-E), ...")
+print(grafoInformado)
 

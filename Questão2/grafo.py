@@ -9,7 +9,7 @@ class Grafo:
     QTDE_MAX_SEPARADOR = 1
     SEPARADOR_ARESTA = '-'
 
-    def __init__(self, N=[], A=[]):
+    def __init__(self, N=[], A={}):
         '''
         Constrói um objeto do tipo Grafo. Se nenhum parâmetro for passado, cria um Grafo vazio.
         Se houver alguma aresta ou algum vértice inválido, uma exceção é lançada.

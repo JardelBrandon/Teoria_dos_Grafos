@@ -24,11 +24,88 @@ i. (DESAFIO) Esse grafo é conexo?
 '''
 
 from grafo import Grafo
-from Questao2 import informarGrafo
+from Questao2 import *
 
-grafo = informarGrafo()
-grafoInformado = grafo.receberGrafo()
-grafo.imprimirGrafo(grafoInformado)
+
+'''
+def escolherGrafo():
+    while(True):
+        grafo = receberGrafo()
+        print(grafo)
+'''
+
+'''
+grafo = receberGrafo()
+#print(grafo)
+'''
+vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
+           "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
+           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
+
+grafo_Paraiba = Grafo(vertices, arestas)
+#print(grafo_Paraiba)
+
+def criarListaVertices(self):
+    #Adicionando os vertices em forma de String
+    grafoVerticesString = ''
+
+    for v in range(len(self.N)):
+        grafoVerticesString += self.N[v]
+        if v < (len(self.N) - 1):  # Só coloca a vírgula se não for o último vértice
+            grafoVerticesString += ", "
+
+    #Criando uma lista que contém os vertices
+    grafoVerticesString = grafoVerticesString.replace(" ", "")
+    grafoVerticesLista = grafoVerticesString.split(",")
+    return grafoVerticesLista
+
+def criarListaArestas(self):
+    #Adicionando as arestas em forma de String
+    grafoArestasString = ''
+
+    for i, a in enumerate(self.A):
+        grafoArestasString += self.A[a]
+        if not(i == len(self.A) - 1): # Só coloca a vírgula se não for a última aresta
+            grafoArestasString += ", "
+
+    #Criando uma lista que contém as arestas
+    grafoArestasString = grafoArestasString.replace(" ", "")
+    grafoArestasString = grafoArestasString.replace("-", "")
+    grafoArestasLista = grafoArestasString.split(",")
+    return grafoArestasLista
+
+
+#a. Encontre todos os pares de vértices não adjacentes.
+def encontrarAdjacentes(self):
+    listaVertices = criarListaVertices(grafo_Paraiba)
+    listaArestas = criarListaArestas(grafo_Paraiba)
+    print(listaVertices)
+    print(listaArestas)
+    listaVerticesNaoAdjacentes = list()
+    listaVerticesAdjacentes = list()
+
+    for vertices in range(0, len(listaVertices)):
+        print(listaArestas[vertices])
+        for arestas in range(0, len(listaArestas)):
+            print(listaArestas[arestas])
+
+    #Verificar Vertices:
+
+
+encontrarAdjacentes(grafo_Paraiba)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

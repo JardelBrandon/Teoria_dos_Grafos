@@ -29,58 +29,46 @@ f) Você deve tratar problemas com a formatação da entrada
 
 from grafo import Grafo
 
-class informarGrafo:
+def receberVertices():
+    entradaVertices = input("Digite os vértices do grafo\nDevem seguir o seguinte formato -> J, C, E, P, M, T, Z, ... :\n")
+    listaVertices = tratamentoVertices(entradaVertices)
+    return listaVertices
 
-    def __init__(self):
-        pass
+def tratamentoVertices(vertices):
+    vertices = vertices.replace(' ', '')
+    vertices = vertices.split(',')
+    return vertices
 
-    def receberVertices(self):
-        self.entradaVertices = input("Digite os vértices do grafo\nDevem seguir o seguinte formato -> J, C, E, P, M, T, Z, ... :\n")
-        self.listaVertices = self.tratamentoVertices(self.entradaVertices)
-        return self.listaVertices
+def receberArestas():
+    entradaArestas = input("Digite as arestas do grafo\nDevem seguir o seguinte formato -> a1(J-C), a2(C-E), a3(C-E), ... :\n")
+    listaArestas = tratamentoArestas(entradaArestas)
+    dicionarioArestas = criarDicionarioArestas(listaArestas)
+    return dicionarioArestas
 
-    def tratamentoVertices(self, vertices):
-        self.vertices = vertices.replace(' ', '')
-        self.vertices = vertices.split(',')
-        print(self.vertices)
-        return self.vertices
+def tratamentoArestas(arestas):
+    ultimoParenteses = (arestas.count('(') - 1)
+    arestas = arestas.replace(')', '(', ultimoParenteses)
+    arestas = arestas.replace(')', '')
+    arestas = arestas.replace(',', '')
+    arestas = arestas.replace(' ', '')
+    arestas = arestas.split('(')
+    return arestas
 
-    def receberArestas(self):
-        self.entradaArestas = input("Digite as arestas do grafo\nDevem seguir o seguinte formato -> a1(J-C), a2(C-E), a3(C-E), ... :\n")
-        self.listaArestas = self.tratamentoArestas(self.entradaArestas)
-        self.dicionarioArestas = self.criarDicionarioArestas(self.listaArestas)
-        return self.dicionarioArestas
+def criarDicionarioArestas(listaArestas):
+    dicionarioArestas = dict()
+    for nome_ligacao in range(0, (len(listaArestas) - 1), 2):
+        dicionarioArestas[listaArestas[nome_ligacao]] = listaArestas[(nome_ligacao + 1)]
+    return dicionarioArestas
 
-    def tratamentoArestas(self, arestas):
-        self.ultimoParenteses = (arestas.count('(') - 1)
-        self.arestas = arestas.replace(')', '(', self.ultimoParenteses)
-        self.arestas = arestas.replace(')', '')
-        self.arestas = arestas.replace(',', '')
-        #print(self.arestas)
-        self.arestas = arestas.replace(' ', '')
-        self.arestas = arestas.split('(')
-        return self.arestas
-
-    def criarDicionarioArestas(self, listaArestas):
-        self.dicionarioArestas = dict()
-        for nome_ligacao in range(0, (len(listaArestas) - 1), 2):
-            self.dicionarioArestas[listaArestas[nome_ligacao]] = listaArestas[(nome_ligacao + 1)]
-        return self.dicionarioArestas
-
-    def receberGrafo(self):
-        self.grafoInformado = Grafo(self.receberVertices(), self.receberArestas())
-        '''
-        while(True):
-            try:
-                self.grafoInformado = Grafo(self.receberVertices(), self.receberArestas())
-                return self.grafoInformado
-                break
-            except:
-                print("O grafo informado apresenta algum erro de entrada.\n"
-                        "Por favor, atente-se para seguir o seguinte padrão:\n"
-                        "Vertices -> J, C, E, P, M, T, Z, ...\n"
-                        "Arestas -> a1(J-C), a2(C-E), a3(C-E), ...")
-        '''
-
-    def imprimirGrafo(self, grafo):
-        print(grafo)
+def receberGrafo():
+    while(True):
+        try:
+            grafoInformado = Grafo(receberVertices(), receberArestas())
+            break
+        except:
+            print("O grafo informado apresenta algum erro de entrada.\n"
+                    "Por favor, atente-se para seguir o seguinte padrão:\n"
+                    "Vertices -> J, C, E, P, M, T, Z, ...\n"
+                    "Arestas -> a1(J-C), a2(C-E), a3(C-E), ...")
+    return grafoInformado
+    #print(grafoInformado)

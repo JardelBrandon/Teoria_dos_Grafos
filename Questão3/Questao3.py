@@ -41,10 +41,13 @@ grafo = receberGrafo()
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
 arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
            "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
-           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
+           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z", "g(a10)": "J-J"}
 
 grafo_Paraiba = Grafo(vertices, arestas)
-#print(grafo_Paraiba)
+print("*******************************************************************************************************")
+print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
+print(grafo_Paraiba)
+print("*******************************************************************************************************")
 
 def criarListaVertices(self):
     #Adicionando os vertices em forma de String
@@ -75,40 +78,94 @@ def criarListaArestas(self):
     grafoArestasLista = grafoArestasString.split(",")
     return grafoArestasLista
 
-
-#a. Encontre todos os pares de vértices não adjacentes.
-def encontrarAdjacentes(self):
+def criarMatrizDeAdjacencias(tipoDeRetornoDaMatrizDeAdjacencia): #Pârametro passado refere-se ao tipo de retorno, se deve ser a matriz de adjacentes ou a matriz de não adjacentes
     listaVertices = criarListaVertices(grafo_Paraiba)
     listaArestas = criarListaArestas(grafo_Paraiba)
     matrizVerticesAdjacentes = list()
     matrizVerticesNaoAdjacentes = list()
+    posicaoAdicionarMatriz = 1
 
     for vertice in range(0, len(listaVertices)):
         matrizVerticesAdjacentes.append(listaVertices[vertice])
         matrizVerticesAdjacentes.append(list())
-        print(matrizVerticesAdjacentes[vertice], "\n")
+        matrizVerticesNaoAdjacentes.append(listaVertices[vertice])
+        matrizVerticesNaoAdjacentes.append(list())
+        #print(listaVertices[vertice], "\n")
 
         for arestasAdjacentes in range(0, len(listaArestas)):
             for aresta in range(0, len(listaArestas[arestasAdjacentes])):
-                print(listaArestas[arestasAdjacentes][aresta], aresta)
-
+                #print(listaArestas[arestasAdjacentes][aresta], aresta)
 
                 if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 0):
-                    matrizVerticesAdjacentes[(vertice + 1)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
-                    print("entrou 0")
+                    matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
+                    #print("entrou 0")
 
                 elif (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
-                    matrizVerticesAdjacentes[(vertice + 1)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
-                    print("Entrou 1")
+                    matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
+                   #print("Entrou 1")
+
+        #Matriz de vertices não adjacentes, realiza a diferença entre o conjunto de todos vertices e o conjunto de vertices adjacentes,
+        #o resultado da diferença são os vertices não adjacentes
+        matrizVerticesNaoAdjacentes[posicaoAdicionarMatriz] = (list(set(listaVertices).difference(matrizVerticesAdjacentes[posicaoAdicionarMatriz])))
+        posicaoAdicionarMatriz += 2
+
+        #print()
+    if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
+        return matrizVerticesAdjacentes
+    elif (tipoDeRetornoDaMatrizDeAdjacencia == "naoAdjacentes"):
+        return matrizVerticesNaoAdjacentes
+
+def imprimirAdjacencias(tipoDeImpressaoDaMatrizDeAdjacencias):
+    matrizVerticesNaoAdjacentes = criarMatrizDeAdjacencias("naoAdjacentes")
+    matrizVerticesAdjacentes = criarMatrizDeAdjacencias("adjacentes")
+
+    if (tipoDeImpressaoDaMatrizDeAdjacencias == "adjacentes"):
+        print("*******************************************************************************************************")
+        print("Vertices adjacentes:\n")
+        for vertice, verticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                               range(1, len(matrizVerticesAdjacentes), 2)):
+            print("O vertice:", matrizVerticesAdjacentes[vertice], "É adjacente aos vertices ->",
+                  matrizVerticesAdjacentes[verticesAdjacentes])
+        print("*******************************************************************************************************")
+        # print(matrizVerticesAdjacentes)
+        # print(matrizVerticesNaoAdjacentes)
+        # Verificar Vertices:
+
+    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "naoAdjacentes"):
+        # print(list(set(listaVertices).difference(set(matrizVerticesAdjacentes[1]))))
+        print("*******************************************************************************************************")
+        print("Vertices não adjacentes:\n")
+        for vertice, verticesNaoAdjacentes in zip(range(0, len(matrizVerticesNaoAdjacentes), 2),
+                                                  range(1, len(matrizVerticesNaoAdjacentes), 2)):
+            print("O vertice:", matrizVerticesNaoAdjacentes[vertice], "Não é adjacente aos vertices ->",
+                  matrizVerticesNaoAdjacentes[verticesNaoAdjacentes])
+        print("*******************************************************************************************************")
+
+
+#a. Encontre todos os pares de vértices não adjacentes.
+def encontrarAdjacentes(self):
+    imprimirAdjacencias("adjacentes")
+    imprimirAdjacencias("naoAdjacentes")
+
+
+#b. b. Há algum vértice adjacente a ele mesmo? (Retorne True ou False)
+def encontrarLacos(self):
+    existeLaco = False
+    matrizVerticesAdjacentes = criarMatrizDeAdjacencias("adjacentes")
+    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                           range(1, len(matrizVerticesAdjacentes), 2)):
+        for verticeAdjacentes in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
+            if (matrizVerticesAdjacentes[vertice] == verticeAdjacentes):
+                existeLaco = True
+
+    print("Existe algum vértice adjacente a ele mesmo?:")
+    return existeLaco
 
 
 
-        print()
-    print(matrizVerticesAdjacentes)
-    #Verificar Vertices:
 
-
-encontrarAdjacentes(grafo_Paraiba)
+encontrarAdjacentes(grafo_Paraiba) #Invocando a função que resolve a letra a da 3 questão
+print(encontrarLacos(grafo_Paraiba)) #Invocando a função que resolve a letra b da 3 questão
 
 
 

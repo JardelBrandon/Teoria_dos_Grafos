@@ -39,9 +39,12 @@ grafo = receberGrafo()
 #print(grafo)
 '''
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+#arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a11)": "C-C", "g(a12)": "J-J"}
+
 arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
            "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
-           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z", "g(a10)": "J-J"}
+           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z",
+           "g(a10)": "J-J", "g(a11)": "C-C", "g(a12)": "J-J"}
 
 grafo_Paraiba = Grafo(vertices, arestas)
 print("*******************************************************************************************************")
@@ -102,14 +105,21 @@ def criarMatrizDeAdjacencias(tipoDeRetornoDaMatrizDeAdjacencia): #Pârametro pas
 
                 elif (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
                     matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
-                   #print("Entrou 1")
+                    #print("Entrou 1")
 
         #Matriz de vertices não adjacentes, realiza a diferença entre o conjunto de todos vertices e o conjunto de vertices adjacentes,
         #o resultado da diferença são os vertices não adjacentes
+        #print()
         matrizVerticesNaoAdjacentes[posicaoAdicionarMatriz] = (list(set(listaVertices).difference(matrizVerticesAdjacentes[posicaoAdicionarMatriz])))
         posicaoAdicionarMatriz += 2
 
-        #print()
+    # Se existir um laço, o vertice do laço só será adicionado uma vez por ocorrência
+    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                           range(1, len(matrizVerticesAdjacentes), 2)):
+        for verticeAdjacentes in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
+            if (matrizVerticesAdjacentes[vertice] == verticeAdjacentes):
+                matrizVerticesAdjacentes[listaDeVerticesAdjacentes].remove(matrizVerticesAdjacentes[vertice])
+
     if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
         return matrizVerticesAdjacentes
     elif (tipoDeRetornoDaMatrizDeAdjacencia == "naoAdjacentes"):
@@ -161,11 +171,33 @@ def encontrarLacos(self):
     print("Existe algum vértice adjacente a ele mesmo?:")
     return existeLaco
 
+#c. Há arestas paralelas? (Retorne True ou False)
+def encontrarArestasParalelas(self):
+    contadorParalelismo = 0
+    existeArestasParalelas = False
+    matrizVerticesAdjacentes = criarMatrizDeAdjacencias("adjacentes")
+    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                           range(1, len(matrizVerticesAdjacentes), 2)):
+        for procurarVerticeParalelo in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
+            for verticeParaleloprocurado in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
+                if (procurarVerticeParalelo == verticeParaleloprocurado and (matrizVerticesAdjacentes[vertice] != procurarVerticeParalelo)):
+                    contadorParalelismo += 1
+                    if (contadorParalelismo > 1):
+                        existeArestasParalelas = True
+            contadorParalelismo = 0
 
+    print("Há arestas paralelas?:")
+    return existeArestasParalelas
 
+#d. Qual o grau do vértice C (Faça uma função genérica para calcular o grau de qualquer vértice. Em seguida, use-a para verificar o grau do vértice C)
+def encontrarGrauDoVertice(self):
+    
 
 encontrarAdjacentes(grafo_Paraiba) #Invocando a função que resolve a letra a da 3 questão
 print(encontrarLacos(grafo_Paraiba)) #Invocando a função que resolve a letra b da 3 questão
+print(encontrarArestasParalelas(grafo_Paraiba)) #Invocando a função que resolve a letra c da 3 questão
+encontrarGrauDoVertice(grafo_Paraiba) #Invocando a função que resolve a letra d da 3 questão
+
 
 
 

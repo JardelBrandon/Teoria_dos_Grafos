@@ -80,16 +80,31 @@ def criarListaArestas(self):
 def encontrarAdjacentes(self):
     listaVertices = criarListaVertices(grafo_Paraiba)
     listaArestas = criarListaArestas(grafo_Paraiba)
-    print(listaVertices)
-    print(listaArestas)
-    listaVerticesNaoAdjacentes = list()
-    listaVerticesAdjacentes = list()
+    matrizVerticesAdjacentes = list()
+    matrizVerticesNaoAdjacentes = list()
 
-    for vertices in range(0, len(listaVertices)):
-        print(listaArestas[vertices])
-        for arestas in range(0, len(listaArestas)):
-            print(listaArestas[arestas])
+    for vertice in range(0, len(listaVertices)):
+        matrizVerticesAdjacentes.append(listaVertices[vertice])
+        matrizVerticesAdjacentes.append(list())
+        print(matrizVerticesAdjacentes[vertice], "\n")
 
+        for arestasAdjacentes in range(0, len(listaArestas)):
+            for aresta in range(0, len(listaArestas[arestasAdjacentes])):
+                print(listaArestas[arestasAdjacentes][aresta], aresta)
+
+
+                if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 0):
+                    matrizVerticesAdjacentes[(vertice + 1)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
+                    print("entrou 0")
+
+                elif (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
+                    matrizVerticesAdjacentes[(vertice + 1)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
+                    print("Entrou 1")
+
+
+
+        print()
+    print(matrizVerticesAdjacentes)
     #Verificar Vertices:
 
 

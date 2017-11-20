@@ -38,13 +38,27 @@ def escolherGrafo():
 grafo = receberGrafo()
 #print(grafo)
 '''
-vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
-#arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a11)": "C-C", "g(a12)": "J-J", "g(a10)": "J-J", "g(a11)": "C-C", "g(a12)": "J-J"}
 
+#Grafo básico da Paraíba
+vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
 arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
            "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
            "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
-
+'''
+Grafo Com laço
+vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+#arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a11)": "C-C", "g(a12)": "J-J", "g(a10)": "J-J", "g(a11)": "C-C", "g(a12)": "J-J"}
+'''
+'''
+Grafo simples 
+vertices = ['J', 'C', 'E']
+arestas = {"g(a1)": "J-C", "g(a2)": "J-E"}
+'''
+'''
+Grafo simples e Completo
+vertices = ['J', 'C', 'E']
+arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
+'''
 grafoParaiba = Grafo(vertices, arestas)
 print("*******************************************************************************************************")
 print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
@@ -132,7 +146,7 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
 
     if (tipoDeImpressaoDaMatrizDeAdjacencias == "adjacentes"):
         print("*******************************************************************************************************")
-        print("Vertices adjacentes:\n")
+        print("a) Vertices adjacentes:\n")
         for vertice, verticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                                range(1, len(matrizVerticesAdjacentes), 2)):
             print("O vertice:", matrizVerticesAdjacentes[vertice], "É adjacente aos vertices ->",
@@ -142,10 +156,19 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
         # print(matrizVerticesNaoAdjacentes)
         # Verificar Vertices:
 
+    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "incidentes"):
+        print("*******************************************************************************************************")
+        print("e) Arestas que são incidentes ao vertice:\n")
+        for vertice, verticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                               range(1, len(matrizVerticesAdjacentes), 2)):
+            print("O vertice:", matrizVerticesAdjacentes[vertice], "Possuí arestas incidentes dos seguintes vertices ->",
+                  matrizVerticesAdjacentes[verticesAdjacentes])
+        print("*******************************************************************************************************")
+
     elif (tipoDeImpressaoDaMatrizDeAdjacencias == "naoAdjacentes"):
         # print(list(set(listaVertices).difference(set(matrizVerticesAdjacentes[1]))))
         print("*******************************************************************************************************")
-        print("Vertices não adjacentes:\n")
+        print("a) Vertices não adjacentes:\n")
         for vertice, verticesNaoAdjacentes in zip(range(0, len(matrizVerticesNaoAdjacentes), 2),
                                                   range(1, len(matrizVerticesNaoAdjacentes), 2)):
             print("O vertice:", matrizVerticesNaoAdjacentes[vertice], "Não é adjacente aos vertices ->",
@@ -155,7 +178,7 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
 
 #a. Encontre todos os pares de vértices não adjacentes.
 def encontrarAdjacentes(self):
-    imprimirAdjacencias(self, "adjacentes")
+    #imprimirAdjacencias(self, "adjacentes")
     imprimirAdjacencias(self, "naoAdjacentes")
 
 
@@ -169,7 +192,6 @@ def encontrarLacos(self):
             if (matrizVerticesAdjacentes[vertice] == verticeAdjacentes):
                 existeLaco = True
 
-    print("Existe algum vértice adjacente a ele mesmo?:")
     return existeLaco
 
 #c. Há arestas paralelas? (Retorne True ou False)
@@ -187,29 +209,79 @@ def encontrarArestasParalelas(self):
                         existeArestasParalelas = True
             contadorParalelismo = 0
 
-    print("Há arestas paralelas?:")
+
     return existeArestasParalelas
 
 #d. Qual o grau do vértice C (Faça uma função genérica para calcular o grau de qualquer vértice. Em seguida, use-a para verificar o grau do vértice C)
 def encontrarGrauDoVertice(self, verticeQueDesejaObterGrauDeRetorno = None): #Se não for passado nenhum vertice como parâmetro, será impresso o grau de todos os vertices do grafo
     matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
     if (verticeQueDesejaObterGrauDeRetorno == None):
+        print("*******************************************************************************************************")
+        print("d) Grau dos Vertices:\n")
         for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                                       range(1, len(matrizVerticesAdjacentes), 2)):
             grauDoVertice = len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])
-            print("Grau do Vertice :",matrizVerticesAdjacentes[vertice],"->", grauDoVertice)
 
+            print("Grau do Vertice :",matrizVerticesAdjacentes[vertice],"->", grauDoVertice)
+        print("*******************************************************************************************************")
     else:
         posicaoDoVertice = matrizVerticesAdjacentes.index(verticeQueDesejaObterGrauDeRetorno)
         grauDoVertice = len(matrizVerticesAdjacentes[posicaoDoVertice + 1])
-        print(grauDoVertice)
+        print("*******************************************************************************************************")
+        print("d) Grau dos Vertices:\n")
+        print("Grau do Verrtice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDoVertice)
+        print("*******************************************************************************************************")
 
+#e. Quais arestas incidem sobre o vértice M?
+def encontrarArestasIncidentes(self, verticeQueDesejaObterAsArestasIncidentes = None): #Se não for passado nenhum vertice como parâmetro, será impresso as arestes incidentes de todos os vertices do grafo
+    matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
+    if (verticeQueDesejaObterAsArestasIncidentes == None):
+        imprimirAdjacencias(self, "incidentes")
+    else:
+        posicaoDoVertice = matrizVerticesAdjacentes.index(verticeQueDesejaObterAsArestasIncidentes)
+        listaDasArestasIncidentes = matrizVerticesAdjacentes[posicaoDoVertice + 1]
+        print("*******************************************************************************************************")
+        print("e) Arestas que são incidentes ao vertice:\n")
+        print("O vertice:", verticeQueDesejaObterAsArestasIncidentes,
+              "Possuí arestas incidentes dos seguintes vertices ->", listaDasArestasIncidentes)
+        print("*******************************************************************************************************")
+
+#f. Esse grafo é completo?
+def encontrarSeGrafoEstaCompleto(self):
+    grafoCompleto = True
+    print("*******************************************************************************************************")
+    print("f) O Grafo é completo?:\n")
+    if (encontrarLacos(self) or encontrarArestasParalelas(self)):
+        print("O grafo informado não é simples, pois possuí laço ou aresta paralela, logo não é completo")
+        grafoCompleto = False
+
+    else:
+        matrizVerticesNaoAdjacentes = criarMatrizDeAdjacencias(self, "naoAdjacentes")
+        for verticesNaoAdjacentes in range(1, len(matrizVerticesNaoAdjacentes), 2):
+            tamanhoDaListaDosVerticesNaoAdjacentes = len(matrizVerticesNaoAdjacentes[verticesNaoAdjacentes])
+            if (tamanhoDaListaDosVerticesNaoAdjacentes != 1):
+                grafoCompleto = False
+
+    if (grafoCompleto == True):
+        print("O grafo informado é completo")
+        print("*******************************************************************************************************")
+    else:
+        print("O grafo informado não é completo")
+        print("*******************************************************************************************************")
 
 
 encontrarAdjacentes(grafoParaiba) #Invocando a função que resolve a letra a da 3 questão
-print(encontrarLacos(grafoParaiba)) #Invocando a função que resolve a letra b da 3 questão
-print(encontrarArestasParalelas(grafoParaiba)) #Invocando a função que resolve a letra c da 3 questão
+print("*******************************************************************************************************")
+print("b) Existe algum vértice adjacente a ele mesmo?:\n")
+print(encontrarLacos(grafoParaiba),
+      "\n*******************************************************************************************************") #Invocando a função que resolve a letra b da 3 questão
+print("*******************************************************************************************************")
+print("c) Há arestas paralelas?:\n")
+print(encontrarArestasParalelas(grafoParaiba),
+      "\n*******************************************************************************************************") #Invocando a função que resolve a letra c da 3 questão
 encontrarGrauDoVertice(grafoParaiba, "C") #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
+encontrarArestasIncidentes(grafoParaiba) #Invocando a função que resolve a letra e da 3 questão
+encontrarSeGrafoEstaCompleto(grafoParaiba) #Invocando a função que resolve a letra f da 3 questão
 
 
 

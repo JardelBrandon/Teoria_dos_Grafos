@@ -25,7 +25,7 @@ i. (DESAFIO) Esse grafo é conexo?
 
 from grafo import Grafo
 from Questao2 import *
-
+from collections import defaultdict
 
 '''
 def escolherGrafo():
@@ -273,36 +273,56 @@ def encontrarSeGrafoEstaCompleto(self):
 
 #i. (DESAFIO) Esse grafo é conexo?
 class verticeComAtributoVisita:
+    vertice_index = defaultdict(list)
     def __init__(self, vertice):
         self.vertice = vertice
         self.visitado = False
-
+        verticeComAtributoVisita.vertice_index[vertice].append(self)
     def __eq__(self, other):
-        if not isinstance(other, verticeComAtributoVisita):
-            return False
-        return self.__dict__ == other.__dict__
+        if type(other) is type(self):
+            return self.__dict__ == other.__dict__
+        return False
+
+    def __ne__(self, other):
+        """Overrides the default implementation (unnecessary in Python 3)"""
+        x = self.__eq__(other)
+        if x is not NotImplemented:
+            return not x
+        return NotImplemented
+
+    def __hash__(self):
+        """Overrides the default implementation"""
+        return hash(tuple(sorted(self.__dict__.items())))
+
+    @classmethod
+    def find_by_vertice(cls, vertice):
+        return verticeComAtributoVisita.vertice_index[vertice]
 '''
     def __str__(self):
         coisa = self.vertice + ' ' + str(self.visitado)
         return coisa
 '''
 def percorrerGrafoDFS(self, vertice, matrizVerticesAdjacentes): #Pesquisa em Profundidade (Depth-First Search - DFS)
-    print("Entrou")
-    vertice.visitado = True
+    #print("Entrou")
+    #print(vertice.vertice)
+    '''
     posicaoDoVertice = matrizVerticesAdjacentes.index(vertice)
+    print(vertice.find_by_vertice(vertice.vertice))
+    '''
+    for encontrarPosicao in range(0, len(matrizVerticesAdjacentes), 2):
+        if vertice.vertice == matrizVerticesAdjacentes[encontrarPosicao].vertice:
+            posicaoDoVertice = encontrarPosicao
+            matrizVerticesAdjacentes[posicaoDoVertice].visitado = True
+            break
 
     for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[posicaoDoVertice + 1])):
-
         if not(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado):
+            '''
             print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].vertice)
-
-            print(matrizVerticesAdjacentes)
-            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].vertice)
-            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes])
-            print(matrizVerticesAdjacentes[6].vertice)
-            print(matrizVerticesAdjacentes[6])
-
-            posicaoDoVertice = matrizVerticesAdjacentes.index(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes])
+            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado)
+            '''
+            #posicaoDoVertice = matrizVerticesAdjacentes.index(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes])
+            matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado = True
             percorrerGrafoDFS(self, matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes], matrizVerticesAdjacentes)
 
 
@@ -316,28 +336,26 @@ def encontrarSeGrafoEstaConexo(self):
     for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                                   range(1, len(matrizVerticesAdjacentes), 2)):
         matrizVerticesAdjacentes[vertice] = verticeComAtributoVisita(matrizVerticesAdjacentes[vertice])
-        print(matrizVerticesAdjacentes[vertice].vertice)
+        #print(matrizVerticesAdjacentes[vertice].vertice)
         for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
             matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes] = verticeComAtributoVisita(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes])
-            print(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].vertice, end=' ')
-        print()
+            #print(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].vertice, end=' ')
+        #print()
 
     #print(matrizVerticesAdjacentes)
-    print(matrizVerticesAdjacentes[3])
-    print(len(matrizVerticesAdjacentes[3]))
-    percorrerGrafoDFS(self, matrizVerticesAdjacentes[2], matrizVerticesAdjacentes)
+    percorrerGrafoDFS(self, matrizVerticesAdjacentes[0], matrizVerticesAdjacentes)
 
 
-    #print(listaVertices[0].visitado)
-'''
-    percorrerGrafoDFS(listaVertices[0].vertice)
-
-    for vertice in range(0, len(listaVertices)):
-        if not(vertice.visitado):
+    for vertice in range(0, len(matrizVerticesAdjacentes), 2):
+        '''
+        print(matrizVerticesAdjacentes[vertice].vertice)
+        print(matrizVerticesAdjacentes[vertice].visitado)
+        '''
+        if not(matrizVerticesAdjacentes[vertice].visitado):
             grafoConexo = False
 
     return grafoConexo
-'''
+
 
 
 

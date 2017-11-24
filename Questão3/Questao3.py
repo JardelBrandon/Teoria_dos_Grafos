@@ -34,18 +34,19 @@ def escolherGrafo():
         print(grafo)
 '''
 
-'''
-grafo = receberGrafo()
-#print(grafo)
-'''
 
+grafoParaiba = receberGrafo()
+#print(grafo)
+
+'''
 #Grafo básico da Paraíba
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
 arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
            "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
            "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
 '''
-Grafo Com laço
+'''
+Grafo com laço
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
 #arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a11)": "C-C", "g(a12)": "J-J", "g(a10)": "J-J", "g(a11)": "C-C", "g(a12)": "J-J"}
 '''
@@ -59,12 +60,13 @@ Grafo simples e Completo
 vertices = ['J', 'C', 'E']
 arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
 '''
+'''
 grafoParaiba = Grafo(vertices, arestas)
 print("*******************************************************************************************************")
 print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
 print(grafoParaiba)
 print("*******************************************************************************************************")
-
+'''
 def criarListaVertices(self):
     #Adicionando os vertices em forma de String
     grafoVerticesString = ''
@@ -269,6 +271,50 @@ def encontrarSeGrafoEstaCompleto(self):
         print("O grafo informado não é completo")
         print("*******************************************************************************************************")
 
+#i. (DESAFIO) Esse grafo é conexo?
+class verticeComAtributoVisita:
+    def __init__(self, vertice):
+        self.vertice = vertice
+        self.visitado = False
+
+def percorrerGrafoDFS(self, vertice, matrizVerticesAdjacentes): #Pesquisa em Profundidade (Depth-First Search - DFS)
+    print("Entrou")
+    vertice.visitado = True
+    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                                  range(1, len(matrizVerticesAdjacentes), 2)):
+        for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
+            if not(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].visitado):
+                percorrerGrafoDFS(self, matrizVerticesAdjacentes[arestasAdjacentes], matrizVerticesAdjacentes)
+                print(matrizVerticesAdjacentes[arestasAdjacentes].visitado)
+
+
+
+
+def encontrarSeGrafoEstaConexo(self):
+    grafoConexo = True
+    matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
+    # Criar o objeto verticeComAtributoVisita marcando todos como não visitados
+    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                                  range(1, len(matrizVerticesAdjacentes), 2)):
+        matrizVerticesAdjacentes[vertice] = verticeComAtributoVisita(matrizVerticesAdjacentes[vertice])
+        for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
+            matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes] = verticeComAtributoVisita(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes])
+
+    percorrerGrafoDFS(self, matrizVerticesAdjacentes[2], matrizVerticesAdjacentes[3])
+
+    #print(listaVertices[0].visitado)
+'''
+    percorrerGrafoDFS(listaVertices[0].vertice)
+
+    for vertice in range(0, len(listaVertices)):
+        if not(vertice.visitado):
+            grafoConexo = False
+
+    return grafoConexo
+'''
+
+
+
 
 encontrarAdjacentes(grafoParaiba) #Invocando a função que resolve a letra a da 3 questão
 print("*******************************************************************************************************")
@@ -279,10 +325,15 @@ print("*************************************************************************
 print("c) Há arestas paralelas?:\n")
 print(encontrarArestasParalelas(grafoParaiba),
       "\n*******************************************************************************************************") #Invocando a função que resolve a letra c da 3 questão
-encontrarGrauDoVertice(grafoParaiba, "C") #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
+encontrarGrauDoVertice(grafoParaiba) #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
 encontrarArestasIncidentes(grafoParaiba) #Invocando a função que resolve a letra e da 3 questão
 encontrarSeGrafoEstaCompleto(grafoParaiba) #Invocando a função que resolve a letra f da 3 questão
-
+'''
+print("*******************************************************************************************************")
+print("c) O grafo é conexo?:\n")
+print(encontrarSeGrafoEstaConexo(grafoParaiba),
+      "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
+'''
 
 
 

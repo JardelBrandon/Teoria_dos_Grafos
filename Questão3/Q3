@@ -34,24 +34,24 @@ def escolherGrafo():
         print(grafo)
 '''
 
-
-grafoParaiba = receberGrafo()
-#print(grafo)
-
 '''
+grafo = receberGrafo()
+#print(grafo)
+'''
+
 #Grafo básico da Paraíba
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
 arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
            "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
            "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
-'''
+
 '''
 Grafo com laço
 vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
 #arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a11)": "C-C", "g(a12)": "J-J", "g(a10)": "J-J", "g(a11)": "C-C", "g(a12)": "J-J"}
 '''
 '''
-Grafo simples 
+Grafo simples
 vertices = ['J', 'C', 'E']
 arestas = {"g(a1)": "J-C", "g(a2)": "J-E"}
 '''
@@ -60,13 +60,13 @@ Grafo simples e Completo
 vertices = ['J', 'C', 'E']
 arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
 '''
-'''
-grafoParaiba = Grafo(vertices, arestas)
+
+grafo = Grafo(vertices, arestas)
 print("*******************************************************************************************************")
 print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
-print(grafoParaiba)
+print(grafo)
 print("*******************************************************************************************************")
-'''
+
 def criarListaVertices(self):
     #Adicionando os vertices em forma de String
     grafoVerticesString = ''
@@ -277,15 +277,33 @@ class verticeComAtributoVisita:
         self.vertice = vertice
         self.visitado = False
 
+    def __eq__(self, other):
+        if not isinstance(other, verticeComAtributoVisita):
+            return False
+        return self.__dict__ == other.__dict__
+'''
+    def __str__(self):
+        coisa = self.vertice + ' ' + str(self.visitado)
+        return coisa
+'''
 def percorrerGrafoDFS(self, vertice, matrizVerticesAdjacentes): #Pesquisa em Profundidade (Depth-First Search - DFS)
     print("Entrou")
     vertice.visitado = True
-    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
-                                                  range(1, len(matrizVerticesAdjacentes), 2)):
-        for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
-            if not(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].visitado):
-                percorrerGrafoDFS(self, matrizVerticesAdjacentes[arestasAdjacentes], matrizVerticesAdjacentes)
-                print(matrizVerticesAdjacentes[arestasAdjacentes].visitado)
+    posicaoDoVertice = matrizVerticesAdjacentes.index(vertice)
+
+    for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[posicaoDoVertice + 1])):
+
+        if not(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado):
+            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].vertice)
+
+            print(matrizVerticesAdjacentes)
+            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].vertice)
+            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes])
+            print(matrizVerticesAdjacentes[6].vertice)
+            print(matrizVerticesAdjacentes[6])
+
+            posicaoDoVertice = matrizVerticesAdjacentes.index(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes])
+            percorrerGrafoDFS(self, matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes], matrizVerticesAdjacentes)
 
 
 
@@ -293,15 +311,22 @@ def percorrerGrafoDFS(self, vertice, matrizVerticesAdjacentes): #Pesquisa em Pro
 def encontrarSeGrafoEstaConexo(self):
     grafoConexo = True
     matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
-    print(matrizVerticesAdjacentes)
+    #print(matrizVerticesAdjacentes)
     # Criar o objeto verticeComAtributoVisita marcando todos como não visitados
     for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                                   range(1, len(matrizVerticesAdjacentes), 2)):
         matrizVerticesAdjacentes[vertice] = verticeComAtributoVisita(matrizVerticesAdjacentes[vertice])
+        print(matrizVerticesAdjacentes[vertice].vertice)
         for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
             matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes] = verticeComAtributoVisita(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes])
+            print(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].vertice, end=' ')
+        print()
 
-    percorrerGrafoDFS(self, matrizVerticesAdjacentes[2], matrizVerticesAdjacentes[3])
+    #print(matrizVerticesAdjacentes)
+    print(matrizVerticesAdjacentes[3])
+    print(len(matrizVerticesAdjacentes[3]))
+    percorrerGrafoDFS(self, matrizVerticesAdjacentes[2], matrizVerticesAdjacentes)
+
 
     #print(listaVertices[0].visitado)
 '''
@@ -317,24 +342,24 @@ def encontrarSeGrafoEstaConexo(self):
 
 
 
-encontrarAdjacentes(grafoParaiba) #Invocando a função que resolve a letra a da 3 questão
+encontrarAdjacentes(grafo) #Invocando a função que resolve a letra a da 3 questão
 print("*******************************************************************************************************")
 print("b) Existe algum vértice adjacente a ele mesmo?:\n")
-print(encontrarLacos(grafoParaiba),
+print(encontrarLacos(grafo),
       "\n*******************************************************************************************************") #Invocando a função que resolve a letra b da 3 questão
 print("*******************************************************************************************************")
 print("c) Há arestas paralelas?:\n")
-print(encontrarArestasParalelas(grafoParaiba),
+print(encontrarArestasParalelas(grafo),
       "\n*******************************************************************************************************") #Invocando a função que resolve a letra c da 3 questão
-encontrarGrauDoVertice(grafoParaiba) #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
-encontrarArestasIncidentes(grafoParaiba) #Invocando a função que resolve a letra e da 3 questão
-encontrarSeGrafoEstaCompleto(grafoParaiba) #Invocando a função que resolve a letra f da 3 questão
-'''
+encontrarGrauDoVertice(grafo) #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
+encontrarArestasIncidentes(grafo) #Invocando a função que resolve a letra e da 3 questão
+encontrarSeGrafoEstaCompleto(grafo) #Invocando a função que resolve a letra f da 3 questão
+
 print("*******************************************************************************************************")
-print("c) O grafo é conexo?:\n")
-print(encontrarSeGrafoEstaConexo(grafoParaiba),
+print("1) O grafo é conexo?:\n")
+print(encontrarSeGrafoEstaConexo(grafo),
       "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
-'''
+
 
 
 

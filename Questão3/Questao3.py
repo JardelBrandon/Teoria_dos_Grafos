@@ -327,11 +327,11 @@ def imprimirInformacoesDoGrafo(self):
 def menuSelecaoGrafo():
     while True:
         print("Se deseja informar um grafo; Digite -> 0\nOu se deseja usar um grafo presente na base de dados; Digite -> 1: ")
-        selecaoDoGrafo = int(input())
-        if selecaoDoGrafo == 0:
+        selecaoDoGrafo = input()
+        if selecaoDoGrafo == '0':
             grafo = receberGrafo()
             break
-        elif selecaoDoGrafo == 1:
+        elif selecaoDoGrafo == '1':
             while True:
                 print("Se deseja utilizar um grafo básico da Paraíba; Digite -> 0\n"
                       "Ou se deseja utilizar um grafo completo; Digite -> 1\n"
@@ -341,58 +341,58 @@ def menuSelecaoGrafo():
                       "Ou se deseja utilizar um grafo simples; Digite -> 5\n"
                       "Ou se deseja utilizar um grafo com arestas paralelas; Digite -> 6\n"
                       "Ou se deseja voltar ao menu de seleção anterior; Digite ->7")
-                tipoDoGrafo = int(input())
-                if tipoDoGrafo == 0:
+                tipoDoGrafo = input()
+                if tipoDoGrafo == '0':
                     # Grafo básico da Paraíba
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
                                "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
                                "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
                     break
-                elif tipoDoGrafo == 1:
+                elif tipoDoGrafo == '1':
                     #Grafo simples e Completo
                     vertices = ['J', 'C', 'E']
                     arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
                     break
 
-                elif tipoDoGrafo == 2:
+                elif tipoDoGrafo == '2':
                     #Grafo com laço
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(3)": "C-C", "g(a4)": "J-J",
                                                 "g(a5)": "J-J", "g(a6)": "C-C", "g(a7)": "J-J"}
                     break
 
-                elif tipoDoGrafo == 3:
+                elif tipoDoGrafo == '3':
                     #Grafo Conexo
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "E-P",
                                 "g(a4)": "P-M", "g(a5)": "M-T", "g(a6)": "T-Z"}
                     break
-                elif tipoDoGrafo == 4:
+                elif tipoDoGrafo == '4':
                     #Grafo Desconexo
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z', 'A', 'B']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "E-P",
                                 "g(a4)": "M-T", "g(a5)": "T-Z","g(a6)": "A-B"}
                     break
 
-                elif tipoDoGrafo == 5:
+                elif tipoDoGrafo == '5':
                     #Grafo simples
                     vertices = ['J', 'C', 'E']
                     arestas = {"g(a1)": "J-C", "g(a2)": "J-E"}
                     break
 
-                elif tipoDoGrafo == 6:
+                elif tipoDoGrafo == '6':
                     #Grafo com arestas paralelas
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
                                "g(a4)": "C-P", "g(a5)": "Z-T", "g(a6)": "T-M",
                                "g(a7)": "M-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
                     break
-                elif tipoDoGrafo == 7:
+                elif tipoDoGrafo == '7':
                     break
                 else:
                     print("Por farvor, digite um tipo de grafo válido!")
-            if tipoDoGrafo == 7:
+            if tipoDoGrafo == '7':
                 continue
             else:
                 grafo = Grafo(vertices, arestas)

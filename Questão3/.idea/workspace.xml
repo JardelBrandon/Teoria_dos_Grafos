@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3438ed-3efa-4ef2-839d-c81123f48358" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Questão3.iml" afterPath="$PROJECT_DIR$/.idea/Questão3.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Q3.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q3.py" afterPath="$PROJECT_DIR$/Q3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questao3.py" afterPath="$PROJECT_DIR$/Questao3.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,45 +23,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Questao3.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Questao3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Questao3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5168">
-              <caret line="306" column="3" lean-forward="false" selection-start-line="306" selection-start-column="3" selection-end-line="306" selection-end-column="3" />
-              <folding>
-                <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-                <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-                <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Q3.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Q3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="429" column="0" lean-forward="true" selection-start-line="429" selection-start-column="0" selection-end-line="429" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="401" column="44" lean-forward="false" selection-start-line="401" selection-start-column="44" selection-end-line="401" selection-end-column="44" />
               <folding>
                 <element signature="e#1133#1156#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5270">
-              <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -116,8 +84,8 @@
         <option value="$PROJECT_DIR$/Questao2.py" />
         <option value="$PROJECT_DIR$/grafo.py" />
         <option value="$PROJECT_DIR$/Q3" />
-        <option value="$PROJECT_DIR$/Questao3.py" />
         <option value="$PROJECT_DIR$/Q3.py" />
+        <option value="$PROJECT_DIR$/Questao3.py" />
       </list>
     </option>
   </component>
@@ -149,9 +117,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -172,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Q3 (1)">
+  <component name="RunManager" selected="Python.Questao3">
     <configuration default="false" name="Questao3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -373,8 +341,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Q3 (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Questao3" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Questao3" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Q3 (1)" />
         <item index="2" class="java.lang.String" itemvalue="Python.Q3" />
         <item index="3" class="java.lang.String" itemvalue="Python.recebe_elementos_usuario" />
         <item index="4" class="java.lang.String" itemvalue="Python.diagonal_principal" />
@@ -420,16 +388,16 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2700454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27382752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24273504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34816462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24273504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39625585" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -482,16 +450,6 @@
           <line>305</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Q3.py</url>
-          <line>286</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Q3.py</url>
-          <line>272</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -533,16 +491,7 @@
         <state relative-caret-position="4573">
           <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
           <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
+            <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -585,16 +534,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
+            <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,16 +575,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
+            <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,16 +616,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
+            <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,16 +657,7 @@
         <state relative-caret-position="561">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
+            <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -800,16 +713,7 @@
         <state relative-caret-position="482">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
+            <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -851,25 +755,6 @@
     <entry file="file://C:/Program Files/Python35/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/Q3" />
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/21627504/builtins.py" />
-    <entry file="file://$PROJECT_DIR$/Questao3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5168">
-          <caret line="306" column="3" lean-forward="false" selection-start-line="306" selection-start-column="3" selection-end-line="306" selection-end-column="3" />
-          <folding>
-            <marker date="1511572933360" expanded="true" signature="6748:6890" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="7579:7745" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="8405:8560" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="12935:13085" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15378:16295" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="15782:16169" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="16296:16491" ph="'''...'''" />
-            <marker date="1511572933360" expanded="true" signature="16763:16906" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17119:17273" ph="..." />
-            <marker date="1511572933360" expanded="true" signature="17657:18028" ph="'''...'''" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5270">
@@ -878,10 +763,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q3.py">
+    <entry file="file://$PROJECT_DIR$/Q3.py" />
+    <entry file="file://$PROJECT_DIR$/Questao3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="429" column="0" lean-forward="true" selection-start-line="429" selection-start-column="0" selection-end-line="429" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="401" column="44" lean-forward="false" selection-start-line="401" selection-start-column="44" selection-end-line="401" selection-end-column="44" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
           </folding>

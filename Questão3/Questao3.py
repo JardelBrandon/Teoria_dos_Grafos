@@ -27,46 +27,7 @@ from grafo import Grafo
 from Questao2 import *
 
 
-'''
-def escolherGrafo():
-    while(True):
-        grafo = receberGrafo()
-        print(grafo)
-'''
 
-
-grafoParaiba = receberGrafo()
-#print(grafo)
-
-'''
-#Grafo básico da Paraíba
-vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
-arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
-           "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
-           "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
-'''
-'''
-Grafo com laço
-vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
-#arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a11)": "C-C", "g(a12)": "J-J", "g(a10)": "J-J", "g(a11)": "C-C", "g(a12)": "J-J"}
-'''
-'''
-Grafo simples 
-vertices = ['J', 'C', 'E']
-arestas = {"g(a1)": "J-C", "g(a2)": "J-E"}
-'''
-'''
-Grafo simples e Completo
-vertices = ['J', 'C', 'E']
-arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
-'''
-'''
-grafoParaiba = Grafo(vertices, arestas)
-print("*******************************************************************************************************")
-print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
-print(grafoParaiba)
-print("*******************************************************************************************************")
-'''
 def criarListaVertices(self):
     #Adicionando os vertices em forma de String
     grafoVerticesString = ''
@@ -265,10 +226,10 @@ def encontrarSeGrafoEstaCompleto(self):
                 grafoCompleto = False
 
     if (grafoCompleto == True):
-        print("O grafo informado é completo")
+        print("O grafo informado é completo!")
         print("*******************************************************************************************************")
     else:
-        print("O grafo informado não é completo")
+        print("O grafo informado não é completo!")
         print("*******************************************************************************************************")
 
 #i. (DESAFIO) Esse grafo é conexo?
@@ -278,14 +239,27 @@ class verticeComAtributoVisita:
         self.visitado = False
 
 def percorrerGrafoDFS(self, vertice, matrizVerticesAdjacentes): #Pesquisa em Profundidade (Depth-First Search - DFS)
-    print("Entrou")
-    vertice.visitado = True
-    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
-                                                  range(1, len(matrizVerticesAdjacentes), 2)):
-        for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
-            if not(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].visitado):
-                percorrerGrafoDFS(self, matrizVerticesAdjacentes[arestasAdjacentes], matrizVerticesAdjacentes)
-                print(matrizVerticesAdjacentes[arestasAdjacentes].visitado)
+    #print("Entrou")
+    #print(vertice.vertice)
+    '''
+    posicaoDoVertice = matrizVerticesAdjacentes.index(vertice)
+    print(vertice.find_by_vertice(vertice.vertice))
+    '''
+    for encontrarPosicao in range(0, len(matrizVerticesAdjacentes), 2):
+        if vertice.vertice == matrizVerticesAdjacentes[encontrarPosicao].vertice:
+            posicaoDoVertice = encontrarPosicao
+            matrizVerticesAdjacentes[posicaoDoVertice].visitado = True
+            break
+
+    for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[posicaoDoVertice + 1])):
+        if not(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado):
+            '''
+            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].vertice)
+            print(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado)
+            '''
+            #posicaoDoVertice = matrizVerticesAdjacentes.index(matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes])
+            matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes].visitado = True
+            percorrerGrafoDFS(self, matrizVerticesAdjacentes[posicaoDoVertice + 1][arestasAdjacentes], matrizVerticesAdjacentes)
 
 
 
@@ -293,48 +267,144 @@ def percorrerGrafoDFS(self, vertice, matrizVerticesAdjacentes): #Pesquisa em Pro
 def encontrarSeGrafoEstaConexo(self):
     grafoConexo = True
     matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
-    print(matrizVerticesAdjacentes)
+    #print(matrizVerticesAdjacentes)
     # Criar o objeto verticeComAtributoVisita marcando todos como não visitados
     for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                                   range(1, len(matrizVerticesAdjacentes), 2)):
         matrizVerticesAdjacentes[vertice] = verticeComAtributoVisita(matrizVerticesAdjacentes[vertice])
+        #print(matrizVerticesAdjacentes[vertice].vertice)
         for arestasAdjacentes in range(0, len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])):
             matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes] = verticeComAtributoVisita(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes])
+            #print(matrizVerticesAdjacentes[listaDeVerticesAdjacentes][arestasAdjacentes].vertice, end=' ')
+        #print()
 
-    percorrerGrafoDFS(self, matrizVerticesAdjacentes[2], matrizVerticesAdjacentes[3])
+    #print(matrizVerticesAdjacentes)
+    percorrerGrafoDFS(self, matrizVerticesAdjacentes[0], matrizVerticesAdjacentes)
 
-    #print(listaVertices[0].visitado)
-'''
-    percorrerGrafoDFS(listaVertices[0].vertice)
 
-    for vertice in range(0, len(listaVertices)):
-        if not(vertice.visitado):
+    for vertice in range(0, len(matrizVerticesAdjacentes), 2):
+        '''
+        print(matrizVerticesAdjacentes[vertice].vertice)
+        print(matrizVerticesAdjacentes[vertice].visitado)
+        '''
+        if not(matrizVerticesAdjacentes[vertice].visitado):
             grafoConexo = False
 
     return grafoConexo
-'''
 
 
 
 
-encontrarAdjacentes(grafoParaiba) #Invocando a função que resolve a letra a da 3 questão
-print("*******************************************************************************************************")
-print("b) Existe algum vértice adjacente a ele mesmo?:\n")
-print(encontrarLacos(grafoParaiba),
-      "\n*******************************************************************************************************") #Invocando a função que resolve a letra b da 3 questão
-print("*******************************************************************************************************")
-print("c) Há arestas paralelas?:\n")
-print(encontrarArestasParalelas(grafoParaiba),
-      "\n*******************************************************************************************************") #Invocando a função que resolve a letra c da 3 questão
-encontrarGrauDoVertice(grafoParaiba) #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
-encontrarArestasIncidentes(grafoParaiba) #Invocando a função que resolve a letra e da 3 questão
-encontrarSeGrafoEstaCompleto(grafoParaiba) #Invocando a função que resolve a letra f da 3 questão
-'''
-print("*******************************************************************************************************")
-print("c) O grafo é conexo?:\n")
-print(encontrarSeGrafoEstaConexo(grafoParaiba),
-      "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
-'''
+def imprimirInformacoesDoGrafo(self):
+    print("Imprimindo as informações pertinentes ao grafo informado:")
+    print("*******************************************************************************************************")
+    print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
+    print(grafo)
+    print("*******************************************************************************************************")
+
+    encontrarAdjacentes(self) #Invocando a função que resolve a letra a da 3 questão
+    print("*******************************************************************************************************")
+    print("b) Existe algum vértice adjacente a ele mesmo?:\n")
+    print(encontrarLacos(self),
+          "\n*******************************************************************************************************") #Invocando a função que resolve a letra b da 3 questão
+
+    print("*******************************************************************************************************")
+    print("c) Há arestas paralelas?:\n")
+    print(encontrarArestasParalelas(self),
+          "\n*******************************************************************************************************") #Invocando a função que resolve a letra c da 3 questão
+
+    encontrarGrauDoVertice(self) #Invocando a função que resolve a letra d da 3 questão Obs: Laço é contado como duas incidência
+
+    encontrarArestasIncidentes(self) #Invocando a função que resolve a letra e da 3 questão
+
+    encontrarSeGrafoEstaCompleto(self) #Invocando a função que resolve a letra f da 3 questão
+
+    print("*******************************************************************************************************")
+    print("1) O grafo é conexo?:\n")
+    print(encontrarSeGrafoEstaConexo(self),
+          "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
+
+def menuSelecaoGrafo():
+    while True:
+        print("Se deseja informar um grafo; Digite -> 0\nOu se deseja usar um grafo presente na base de dados; Digite -> 1: ")
+        selecaoDoGrafo = int(input())
+        if selecaoDoGrafo == 0:
+            grafo = receberGrafo()
+            break
+        elif selecaoDoGrafo == 1:
+            while True:
+                print("Se deseja utilizar um grafo básico da Paraíba; Digite -> 0\n"
+                      "Ou se deseja utilizar um grafo completo; Digite -> 1\n"
+                      "Ou se deseja utilizar um grafo com laço; Digite -> 2\n"
+                      "Ou se deseja utilizar um grafo conexo; Digite -> 3\n"
+                      "Ou se deseja utilizar um grafo desconexo; Digite -> 4\n"
+                      "Ou se deseja utilizar um grafo simples; Digite -> 5\n"
+                      "Ou se deseja utilizar um grafo com arestas paralelas; Digite -> 6\n"
+                      "Ou se deseja voltar ao menu de seleção anterior; Digite ->7")
+                tipoDoGrafo = int(input())
+                if tipoDoGrafo == 0:
+                    # Grafo básico da Paraíba
+                    vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
+                               "g(a4)": "C-P", "g(a5)": "C-P", "g(a6)": "C-M",
+                               "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
+                    break
+                elif tipoDoGrafo == 1:
+                    #Grafo simples e Completo
+                    vertices = ['J', 'C', 'E']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
+                    break
+
+                elif tipoDoGrafo == 2:
+                    #Grafo com laço
+                    vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(3)": "C-C", "g(a4)": "J-J",
+                                                "g(a5)": "J-J", "g(a6)": "C-C", "g(a7)": "J-J"}
+                    break
+
+                elif tipoDoGrafo == 3:
+                    #Grafo Conexo
+                    vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "E-P",
+                                "g(a4)": "P-M", "g(a5)": "M-T", "g(a6)": "T-Z"}
+                    break
+                elif tipoDoGrafo == 4:
+                    #Grafo Desconexo
+                    vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z', 'A', 'B']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "E-P",
+                                "g(a4)": "M-T", "g(a5)": "T-Z","g(a6)": "A-B"}
+                    break
+
+                elif tipoDoGrafo == 5:
+                    #Grafo simples
+                    vertices = ['J', 'C', 'E']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "J-E"}
+                    break
+
+                elif tipoDoGrafo == 6:
+                    #Grafo com arestas paralelas
+                    vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
+                    arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "C-E",
+                               "g(a4)": "C-P", "g(a5)": "Z-T", "g(a6)": "T-M",
+                               "g(a7)": "M-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
+                    break
+                elif tipoDoGrafo == 7:
+                    break
+                else:
+                    print("Por farvor, digite um tipo de grafo válido!")
+            if tipoDoGrafo == 7:
+                continue
+            else:
+                grafo = Grafo(vertices, arestas)
+                break
+        else:
+            print("Por favor, digite um valor referente a operação que deseja realizar.\n"
+                  "Atente-se que os valores possíveis são 0 ou 1!")
+
+    return grafo
+
+grafo = menuSelecaoGrafo()
+imprimirInformacoesDoGrafo(grafo)
 
 
 

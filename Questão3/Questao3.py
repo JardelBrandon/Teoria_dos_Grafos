@@ -299,7 +299,7 @@ def imprimirInformacoesDoGrafo(self):
     print("Imprimindo as informações pertinentes ao grafo informado:")
     print("*******************************************************************************************************")
     print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
-    print(grafo)
+    print(self)
     print("*******************************************************************************************************")
 
     encontrarAdjacentes(self) #Invocando a função que resolve a letra a da 3 questão

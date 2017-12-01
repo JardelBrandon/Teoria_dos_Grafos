@@ -403,8 +403,6 @@ def menuSelecaoGrafo():
 
     return grafo
 
-grafo = menuSelecaoGrafo()
-imprimirInformacoesDoGrafo(grafo)
 
 
 

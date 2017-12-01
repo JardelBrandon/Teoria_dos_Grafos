@@ -28,6 +28,10 @@ class Grafo:
 
         self.A = A
 
+        self.matrizAdjacentes = self.criarMatrizDeAdjacencias("adjacentes")
+
+
+
     def arestaValida(self, aresta=''):
         '''
         Verifica se uma aresta passada como parâmetro está dentro do padrão estabelecido.
@@ -100,6 +104,83 @@ class Grafo:
         else:
             ArestaInvalidaException('A aresta ' + self.A[a] + ' é inválida')
 
+
+    def criarListaVertices(self):
+        #Adicionando os vertices em forma de String
+        grafoVerticesString = ''
+
+        for v in range(len(self.N)):
+            grafoVerticesString += self.N[v]
+            if v < (len(self.N) - 1):  # Só coloca a vírgula se não for o último vértice
+                grafoVerticesString += ", "
+
+        #Criando uma lista que contém os vertices
+        grafoVerticesString = grafoVerticesString.replace(" ", "")
+        grafoVerticesLista = grafoVerticesString.split(",")
+        return grafoVerticesLista
+
+    def criarListaArestas(self):
+        #Adicionando as arestas em forma de String
+        grafoArestasString = ''
+
+        for i, a in enumerate(self.A):
+            grafoArestasString += self.A[a]
+            if not(i == len(self.A) - 1): # Só coloca a vírgula se não for a última aresta
+                grafoArestasString += ", "
+
+        #Criando uma lista que contém as arestas
+        grafoArestasString = grafoArestasString.replace(" ", "")
+        grafoArestasString = grafoArestasString.replace("-", "")
+        grafoArestasLista = grafoArestasString.split(",")
+        return grafoArestasLista
+
+    def criarMatrizDeAdjacencias(self, tipoDeRetornoDaMatrizDeAdjacencia): #Pârametro passado refere-se ao tipo de retorno, se deve ser a matriz de adjacentes ou a matriz de não adjacentes
+        listaVertices = self.criarListaVertices()
+        listaArestas = self.criarListaArestas()
+        matrizVerticesAdjacentes = list()
+        matrizVerticesNaoAdjacentes = list()
+        posicaoAdicionarMatriz = 1
+
+        for vertice in range(0, len(listaVertices)):
+            matrizVerticesAdjacentes.append(listaVertices[vertice])
+            matrizVerticesAdjacentes.append(list())
+            matrizVerticesNaoAdjacentes.append(listaVertices[vertice])
+            matrizVerticesNaoAdjacentes.append(list())
+            #print(listaVertices[vertice], "\n")
+
+            for arestasAdjacentes in range(0, len(listaArestas)):
+                for aresta in range(0, len(listaArestas[arestasAdjacentes])):
+                    #print(listaArestas[arestasAdjacentes][aresta], aresta)
+
+                    if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 0):
+                        matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
+                        #print("entrou 0")
+
+                    elif (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
+                        matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
+                        #print("Entrou 1")
+
+            #Matriz de vertices não adjacentes, realiza a diferença entre o conjunto de todos vertices e o conjunto de vertices adjacentes,
+            #o resultado da diferença são os vertices não adjacentes
+            #print()
+            matrizVerticesNaoAdjacentes[posicaoAdicionarMatriz] = (list(set(listaVertices).difference(matrizVerticesAdjacentes[posicaoAdicionarMatriz])))
+            posicaoAdicionarMatriz += 2
+
+        '''
+        # Se existir um laço, o vertice do laço só será adicionado uma vez por ocorrência
+        for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                               range(1, len(matrizVerticesAdjacentes), 2)):
+            for verticeAdjacentes in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
+                if (matrizVerticesAdjacentes[vertice] == verticeAdjacentes):
+                    matrizVerticesAdjacentes[listaDeVerticesAdjacentes].remove(matrizVerticesAdjacentes[vertice])
+        '''
+
+        if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
+            return matrizVerticesAdjacentes
+        elif (tipoDeRetornoDaMatrizDeAdjacencia == "naoAdjacentes"):
+            return matrizVerticesNaoAdjacentes
+
+
     def __str__(self):
         '''
         Fornece uma representação do tipo String do grafo.
@@ -109,21 +190,31 @@ class Grafo:
         grafo_str = ''
 
         for v in range(len(self.N)):
+            grafo_str += '  '
             grafo_str += self.N[v]
+            '''
             if v < (len(self.N) - 1):  # Só coloca a vírgula se não for o último vértice
                 grafo_str += ", "
-
+            '''
         grafo_str += '\n'
 
-        for i, a in enumerate(self.A):
-            grafo_str += self.A[a]
-            if not(i == len(self.A) - 1): # Só coloca a vírgula se não for a última aresta
-                grafo_str += ", "
+        for vertice, listaDeVerticesAdjacentes in zip(range(0, len(self.matrizAdjacentes), 2),
+                                                  range(1, len(self.matrizAdjacentes), 2)):
+            grafo_str += self.matrizAdjacentes[vertice]
+            #grafo_str += "\n"
+            for verticesAdjacentes in range(0, len(self.matrizAdjacentes), 2):
+                    if (self.matrizAdjacentes[verticesAdjacentes] in self.matrizAdjacentes[listaDeVerticesAdjacentes]):
+                        quantidadeDeElementosAdjacentes = self.matrizAdjacentes[listaDeVerticesAdjacentes].count(str(self.matrizAdjacentes[verticesAdjacentes]))
+                        grafo_str += " "
+                        grafo_str += str(quantidadeDeElementosAdjacentes)
+                        grafo_str += " "
+                    else:
+                        grafo_str += " "
+                        grafo_str += "0"
+                        grafo_str += " "
+            grafo_str += "\n"
 
         return grafo_str
-
-
-
 
 
 

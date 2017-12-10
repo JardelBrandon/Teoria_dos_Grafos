@@ -149,6 +149,24 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
             print()
         print("*******************************************************************************************************")
 
+    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioIncidentes"):
+        dicionarioIncidentes = dict()
+
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
+            dicionarioIncidentes[vertice] = list()
+
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            for verticesAdjacentes in self.dicionarioDaMAtrizDeAdjacencias:
+                #if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes] > 0):
+                for QuantidadeDeIncidencias in range(0, self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes]):
+                    dicionarioIncidentes[verticesAdjacentes].append(vertice)
+
+        print("*******************************************************************************************************")
+        print("e) Arestas que são incidentes ao vertice:\n")
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            print("O vertice:", vertice, "Possuí arestas incidentes dos seguintes vertices ->", dicionarioIncidentes[vertice])
+        print("*******************************************************************************************************")
+
 
 #a. Encontre todos os pares de vértices não adjacentes.
 def encontrarAdjacentes(self):
@@ -171,9 +189,13 @@ def encontrarArestasParalelas(self):
 
     for vertice in self.dicionarioDaMAtrizDeAdjacencias:
         for verticesAdjacencias in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
-            if (vertice == verticesAdjacencias):
-                pass
-
+            ''' 
+            Obs: Estou com dúvida em relação ao caso de um vertice com mais de um laço incidente a este vertice
+            Se nesse caso esses laços são considerados como arestas paralelas! 
+            Caso sim esta parte do código deve ser descomentada, se não a verificação desta maneira esta correta.
+            if vertice == verticesAdjacencias:
+                continue
+            '''
             if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias] > 1):
                 existeArestasParalelas = True
                 break
@@ -185,36 +207,56 @@ def encontrarArestasParalelas(self):
 
 #d. Qual o grau do vértice C (Faça uma função genérica para calcular o grau de qualquer vértice. Em seguida, use-a para verificar o grau do vértice C)
 def encontrarGrauDoVertice(self, verticeQueDesejaObterGrauDeRetorno = None): #Se não for passado nenhum vertice como parâmetro, será impresso o grau de todos os vertices do grafo
-    matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
+    grauDeEntradaDosVertices = dict()
+    grauDeSaidaDosVertices = dict()
+
+    for vertice in self.dicionarioDaMAtrizDeAdjacencias: #Inicializador dos dicionarios dos graus
+        grauDeSaidaDosVertices[vertice] = 0
+        grauDeEntradaDosVertices[vertice] = 0
+
+    for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+        for verticesAdjacencias in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
+            if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias] > 0):
+                grauDeSaidaDosVertices[vertice] += self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias]
+                grauDeEntradaDosVertices[verticesAdjacencias] += self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias]
+
+
     if (verticeQueDesejaObterGrauDeRetorno == None):
         print("*******************************************************************************************************")
         print("d) Grau dos Vertices:\n")
-        for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
-                                                      range(1, len(matrizVerticesAdjacentes), 2)):
-            grauDoVertice = len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])
-
-            print("Grau do Vertice :",matrizVerticesAdjacentes[vertice],"->", grauDoVertice)
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            print("Grau de entrada do Vertice :", vertice, "->", grauDeEntradaDosVertices[vertice])
+            print("Grau de saída do Vertice :", vertice, "->", grauDeSaidaDosVertices[vertice])
         print("*******************************************************************************************************")
     else:
-        posicaoDoVertice = matrizVerticesAdjacentes.index(verticeQueDesejaObterGrauDeRetorno)
-        grauDoVertice = len(matrizVerticesAdjacentes[posicaoDoVertice + 1])
         print("*******************************************************************************************************")
         print("d) Grau dos Vertices:\n")
-        print("Grau do Verrtice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDoVertice)
+        print("Grau de entrada do Vertice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDeEntradaDosVertices[verticeQueDesejaObterGrauDeRetorno])
+        print("Grau de saída do Vertice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDeSaidaDosVertices[verticeQueDesejaObterGrauDeRetorno])
         print("*******************************************************************************************************")
 
 #e. Quais arestas incidem sobre o vértice M?
 def encontrarArestasIncidentes(self, verticeQueDesejaObterAsArestasIncidentes = None): #Se não for passado nenhum vertice como parâmetro, será impresso as arestes incidentes de todos os vertices do grafo
-    matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
+
     if (verticeQueDesejaObterAsArestasIncidentes == None):
-        imprimirAdjacencias(self, "incidentes")
+        imprimirAdjacencias(self, "dicionarioIncidentes")
+
     else:
-        posicaoDoVertice = matrizVerticesAdjacentes.index(verticeQueDesejaObterAsArestasIncidentes)
-        listaDasArestasIncidentes = matrizVerticesAdjacentes[posicaoDoVertice + 1]
+        dicionarioIncidentes = dict()
+
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
+            dicionarioIncidentes[vertice] = list()
+
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            for verticesAdjacentes in self.dicionarioDaMAtrizDeAdjacencias:
+                #if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes] > 0):
+                for QuantidadeDeIncidencias in range(0, self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes]):
+                    dicionarioIncidentes[verticesAdjacentes].append(vertice)
+
         print("*******************************************************************************************************")
         print("e) Arestas que são incidentes ao vertice:\n")
         print("O vertice:", verticeQueDesejaObterAsArestasIncidentes,
-              "Possuí arestas incidentes dos seguintes vertices ->", listaDasArestasIncidentes)
+              "Possuí arestas incidentes dos seguintes vertices ->", dicionarioIncidentes[verticeQueDesejaObterAsArestasIncidentes])
         print("*******************************************************************************************************")
 
 #f. Esse grafo é completo?
@@ -303,6 +345,7 @@ def encontrarSeGrafoEstaConexo(self):
 
 
 def imprimirInformacoesDoGrafo(self):
+    print(self.dicionarioDaMAtrizDeAdjacencias)
     print("*******************************************************************************************************")
     print("Imprimindo as informações pertinentes ao grafo informado(Utilizando matriz de Adjacências):")
     print("*******************************************************************************************************")
@@ -333,6 +376,7 @@ def imprimirInformacoesDoGrafo(self):
     print("*******************************************************************************************************")
     print("1) O grafo é conexo?:\n")
     print(encontrarSeGrafoEstaConexo(self),
+          "\nObs: A resposta obtida a cima, é referente ao teste se o grafo é fracamente conectado(ou apenas conectado)"
           "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
 
 def menuSelecaoGrafo():

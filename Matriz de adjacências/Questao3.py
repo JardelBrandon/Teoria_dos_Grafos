@@ -138,40 +138,48 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
                   matrizVerticesNaoAdjacentes[verticesNaoAdjacentes])
         print("*******************************************************************************************************")
 
+    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioNaoAdjacentes"):
+        print("*******************************************************************************************************")
+        print("a) Vertices não adjacentes:\n")
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            print("O vertice:", vertice, "Não é adjacente aos vertices ->", end=" ")
+            for verticesAdjacentes in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
+                if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes] == 0):
+                    print(verticesAdjacentes, end=" ")
+            print()
+        print("*******************************************************************************************************")
+
 
 #a. Encontre todos os pares de vértices não adjacentes.
 def encontrarAdjacentes(self):
     #imprimirAdjacencias(self, "adjacentes")
-    imprimirAdjacencias(self, "naoAdjacentes")
+    #imprimirAdjacencias(self, "naoAdjacentes")
+    imprimirAdjacencias(self, "dicionarioNaoAdjacentes")
 
 
-#b. b. Há algum vértice adjacente a ele mesmo? (Retorne True ou False)
+#b. Há algum vértice adjacente a ele mesmo? (Retorne True ou False)
 def encontrarLacos(self):
     existeLaco = False
-    matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
-    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
-                                                    range(1, len(matrizVerticesAdjacentes), 2)):
-        for verticeAdjacentes in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
-            if (matrizVerticesAdjacentes[vertice] == verticeAdjacentes):
-                existeLaco = True
-
+    for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+        if (self.dicionarioDaMAtrizDeAdjacencias[vertice][vertice] > 0):
+            existeLaco = True
     return existeLaco
 
 #c. Há arestas paralelas? (Retorne True ou False)
 def encontrarArestasParalelas(self):
-    contadorParalelismo = 0
     existeArestasParalelas = False
-    matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
-    for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
-                                                    range(1, len(matrizVerticesAdjacentes), 2)):
-        for procurarVerticeParalelo in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
-            for verticeParaleloprocurado in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]:
-                if (procurarVerticeParalelo == verticeParaleloprocurado and (matrizVerticesAdjacentes[vertice] != procurarVerticeParalelo)):
-                    contadorParalelismo += 1
-                    if (contadorParalelismo > 1):
-                        existeArestasParalelas = True
-            contadorParalelismo = 0
 
+    for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+        for verticesAdjacencias in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
+            if (vertice == verticesAdjacencias):
+                pass
+
+            if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias] > 1):
+                existeArestasParalelas = True
+                break
+
+        if (existeArestasParalelas == True):
+            break
 
     return existeArestasParalelas
 
@@ -294,11 +302,14 @@ def encontrarSeGrafoEstaConexo(self):
 
 
 
-
 def imprimirInformacoesDoGrafo(self):
-    print("Imprimindo as informações pertinentes ao grafo informado:")
     print("*******************************************************************************************************")
-    print("Impressão dos vertices do grafo e na linha abaixo seus vertices adjacentes ligados por uma aresta (-): \n")
+    print("Imprimindo as informações pertinentes ao grafo informado(Utilizando matriz de Adjacências):")
+    print("*******************************************************************************************************")
+    print("*******************************************************************************************************")
+    print("Impressão do grafo em forma de matriz de adjacências.\n"
+          "Obs: A matriz representa se existe caminho entre o vertice da linha sobre o vertice da coluna,\n"
+          "Demostrando dessa maneira a quantidade de arestas que os ligam: \n")
     print(self)
     print("*******************************************************************************************************")
 
@@ -402,10 +413,10 @@ def menuSelecaoGrafo():
                   "Atente-se que os valores possíveis são 0 ou 1!")
 
     return grafo
-'''
+
 grafo = menuSelecaoGrafo()
 imprimirInformacoesDoGrafo(grafo)
-'''
+
 
 
 

@@ -29,6 +29,9 @@ class Grafo:
         self.A = A
 
         self.matrizAdjacentes = self.criarMatrizDeAdjacencias("adjacentes")
+        self.matrizNaoAdjacentes = self.criarMatrizDeAdjacencias("naoAdjacentes")
+        self.dicionarioDaMAtrizDeAdjacencias = self.criarMatrizDeAdjacencias("dicionarioAdjacencias")
+
 
 
 
@@ -139,6 +142,7 @@ class Grafo:
         listaArestas = self.criarListaArestas()
         matrizVerticesAdjacentes = list()
         matrizVerticesNaoAdjacentes = list()
+        dicionarioDaMatrizDeAdjacencias = dict()
         posicaoAdicionarMatriz = 1
 
         for vertice in range(0, len(listaVertices)):
@@ -155,11 +159,11 @@ class Grafo:
                     if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 0):
                         matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
                         #print("entrou 0")
-
+                    ''' Se o grafo for do tipo não direcionando, descomentar esta parte do código 
                     elif (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
                         matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
                         #print("Entrou 1")
-
+                    '''
             #Matriz de vertices não adjacentes, realiza a diferença entre o conjunto de todos vertices e o conjunto de vertices adjacentes,
             #o resultado da diferença são os vertices não adjacentes
             #print()
@@ -174,11 +178,25 @@ class Grafo:
                 if (matrizVerticesAdjacentes[vertice] == verticeAdjacentes):
                     matrizVerticesAdjacentes[listaDeVerticesAdjacentes].remove(matrizVerticesAdjacentes[vertice])
         '''
+        #Criar dicionario com os vertices e outro dicionario com os vertices e quantas ligações existem entre eles
+        for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                            range(1, len(matrizVerticesAdjacentes), 2)):
+            dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]] = dict()
+            for verticesAdjacentes in range(0, len(matrizVerticesAdjacentes), 2):
+                if (matrizVerticesAdjacentes[verticesAdjacentes] in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]):
+                    quantidadeDeElementosAdjacentes = matrizVerticesAdjacentes[listaDeVerticesAdjacentes].count(str(matrizVerticesAdjacentes[verticesAdjacentes]))
+                    dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = quantidadeDeElementosAdjacentes
+                else:
+                    dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = 0
 
+        #Condição do menu de retorno
         if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
             return matrizVerticesAdjacentes
         elif (tipoDeRetornoDaMatrizDeAdjacencia == "naoAdjacentes"):
             return matrizVerticesNaoAdjacentes
+
+        elif (tipoDeRetornoDaMatrizDeAdjacencia == "dicionarioAdjacencias"):
+            return dicionarioDaMatrizDeAdjacencias
 
 
     def __str__(self):

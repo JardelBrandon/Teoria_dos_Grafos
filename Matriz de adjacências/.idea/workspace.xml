@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3438ed-3efa-4ef2-839d-c81123f48358" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Questao3.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TesteDict.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Questão3.iml" afterPath="$PROJECT_DIR$/.idea/Questão3.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grafo.py" afterPath="$PROJECT_DIR$/grafo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,23 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Questao3.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Questao3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Questao3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="318" column="13" lean-forward="false" selection-start-line="318" selection-start-column="13" selection-end-line="318" selection-end-column="13" />
-              <folding>
-                <element signature="e#1133#1156#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Q3.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+            <state relative-caret-position="4438">
+              <caret line="310" column="101" lean-forward="false" selection-start-line="310" selection-start-column="101" selection-end-line="310" selection-end-column="101" />
               <folding>
                 <element signature="e#1133#1156#0" expanded="true" />
               </folding>
@@ -57,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grafo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="grafo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grafo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="234">
               <caret line="223" column="107" lean-forward="false" selection-start-line="223" selection-start-column="107" selection-end-line="223" selection-end-column="107" />
               <folding />
             </state>
@@ -70,7 +58,7 @@
       <file leaf-file-name="ImprimirMatrizAdjacencias.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Questão3/ImprimirMatrizAdjacencias.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="126">
               <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding />
             </state>
@@ -111,6 +99,7 @@
         <option value="$PROJECT_DIR$/../Questão3/Questao3.py" />
         <option value="$PROJECT_DIR$/Questao3.py" />
         <option value="$PROJECT_DIR$/grafo.py" />
+        <option value="$PROJECT_DIR$/Teste.py" />
         <option value="$PROJECT_DIR$/Q3.py" />
       </list>
     </option>
@@ -121,7 +110,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -176,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Q3">
+  <component name="RunManager" selected="Python.Questao3 (1)">
     <configuration name="Q3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -189,12 +178,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q3.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Questao1(grafo_Paraiba)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Questao 3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -206,12 +195,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Questao1(grafo_Paraiba).py" />
+      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Questao2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Questao3 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -223,7 +212,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Questao2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Questao3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -241,12 +230,12 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Questao3.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="TesteDict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Teste" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -258,7 +247,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TesteDict.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Teste.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -380,18 +369,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Questao3" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Questao1(grafo_Paraiba)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.TesteDict" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Questao2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Q3" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Q3" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Teste" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Questao 3" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Questao3 (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Q3" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Questao3" />
-        <item index="2" class="java.lang.String" itemvalue="Python.TesteDict" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Questao2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Questao1(grafo_Paraiba)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Questao3 (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Questao 3" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Questao3" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Q3" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Teste" />
       </list>
     </recent_temporary>
   </component>
@@ -421,7 +410,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31316188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -429,11 +418,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34700856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23076923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23076923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3948718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3948718" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -488,28 +477,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Questao3.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Questao3.py</url>
-          <line>188</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Questao3.py</url>
-          <line>318</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Q3.py</url>
-          <line>311</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Q3.py</url>
-          <line>315</line>
+          <line>310</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Questao3.py</url>
+          <line>300</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -522,19 +496,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Questao2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grafo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -761,34 +727,14 @@
     <entry file="file://C:/Program Files/Python35/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/Q3" />
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/21627504/builtins.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/codecs.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/urllib/parse.py" />
     <entry file="file://$PROJECT_DIR$/matrizAdjacencias.py" />
     <entry file="file://$PROJECT_DIR$/Questao1(grafo_Paraiba).py" />
-    <entry file="file://$PROJECT_DIR$/TesteDict.py" />
     <entry file="file://$PROJECT_DIR$/../Questão3/Questao3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2652">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Questão3/ImprimirMatrizAdjacencias.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Questao3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="318" column="13" lean-forward="false" selection-start-line="318" selection-start-column="13" selection-end-line="318" selection-end-column="13" />
-          <folding>
-            <element signature="e#1133#1156#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,21 +746,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q3.py">
+    <entry file="file://$PROJECT_DIR$/Questao3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+        <state relative-caret-position="532">
+          <caret line="310" column="101" lean-forward="false" selection-start-line="310" selection-start-column="101" selection-end-line="310" selection-end-column="101" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Teste.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="461" column="0" lean-forward="false" selection-start-line="461" selection-start-column="0" selection-end-line="461" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TesteDict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Questão3/ImprimirMatrizAdjacencias.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grafo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="234">
           <caret line="223" column="107" lean-forward="false" selection-start-line="223" selection-start-column="107" selection-end-line="223" selection-end-column="107" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Questao3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4438">
+          <caret line="310" column="101" lean-forward="false" selection-start-line="310" selection-start-column="101" selection-end-line="310" selection-end-column="101" />
+          <folding>
+            <element signature="e#1133#1156#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

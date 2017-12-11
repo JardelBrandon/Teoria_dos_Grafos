@@ -216,19 +216,12 @@ class Grafo:
             '''
         grafo_str += '\n'
 
-        for vertice, listaDeVerticesAdjacentes in zip(range(0, len(self.matrizAdjacentes), 2),
-                                                  range(1, len(self.matrizAdjacentes), 2)):
-            grafo_str += self.matrizAdjacentes[vertice]
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            grafo_str += vertice
             #grafo_str += "\n"
-            for verticesAdjacentes in range(0, len(self.matrizAdjacentes), 2):
-                    if (self.matrizAdjacentes[verticesAdjacentes] in self.matrizAdjacentes[listaDeVerticesAdjacentes]):
-                        quantidadeDeElementosAdjacentes = self.matrizAdjacentes[listaDeVerticesAdjacentes].count(str(self.matrizAdjacentes[verticesAdjacentes]))
+            for verticesAdjacentes in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
                         grafo_str += " "
-                        grafo_str += str(quantidadeDeElementosAdjacentes)
-                        grafo_str += " "
-                    else:
-                        grafo_str += " "
-                        grafo_str += "0"
+                        grafo_str += str(self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes])
                         grafo_str += " "
             grafo_str += "\n"
 

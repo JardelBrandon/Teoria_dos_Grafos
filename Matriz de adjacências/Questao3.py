@@ -98,16 +98,16 @@ def criarMatrizDeAdjacencias(self, tipoDeRetornoDaMatrizDeAdjacencia): #Pâramet
                 matrizVerticesAdjacentes[listaDeVerticesAdjacentes].remove(matrizVerticesAdjacentes[vertice])
     '''
 
-    if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
+    if tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes":
         return matrizVerticesAdjacentes
-    elif (tipoDeRetornoDaMatrizDeAdjacencia == "naoAdjacentes"):
+    elif tipoDeRetornoDaMatrizDeAdjacencia == "naoAdjacentes":
         return matrizVerticesNaoAdjacentes
 
 def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
     matrizVerticesNaoAdjacentes = criarMatrizDeAdjacencias(self, "naoAdjacentes")
     matrizVerticesAdjacentes = criarMatrizDeAdjacencias(self, "adjacentes")
 
-    if (tipoDeImpressaoDaMatrizDeAdjacencias == "adjacentes"):
+    if tipoDeImpressaoDaMatrizDeAdjacencias == "adjacentes":
         print("*******************************************************************************************************")
         print("a) Vertices adjacentes:\n")
         for vertice, verticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
@@ -119,7 +119,7 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
         # print(matrizVerticesNaoAdjacentes)
         # Verificar Vertices:
 
-    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "incidentes"):
+    elif tipoDeImpressaoDaMatrizDeAdjacencias == "incidentes":
         print("*******************************************************************************************************")
         print("e) Arestas que são incidentes ao vertice:\n")
         for vertice, verticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
@@ -128,7 +128,7 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
                   matrizVerticesAdjacentes[verticesAdjacentes])
         print("*******************************************************************************************************")
 
-    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "naoAdjacentes"):
+    elif tipoDeImpressaoDaMatrizDeAdjacencias == "naoAdjacentes":
         # print(list(set(listaVertices).difference(set(matrizVerticesAdjacentes[1]))))
         print("*******************************************************************************************************")
         print("a) Vertices não adjacentes:\n")
@@ -138,18 +138,18 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
                   matrizVerticesNaoAdjacentes[verticesNaoAdjacentes])
         print("*******************************************************************************************************")
 
-    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioNaoAdjacentes"):
+    elif tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioNaoAdjacentes":
         print("*******************************************************************************************************")
         print("a) Vertices não adjacentes:\n")
         for vertice in self.dicionarioDaMAtrizDeAdjacencias:
             print("O vertice:", vertice, "Não é adjacente aos vertices ->", end=" ")
             for verticesAdjacentes in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
-                if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes] == 0):
+                if self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes] == 0:
                     print(verticesAdjacentes, end=" ")
             print()
         print("*******************************************************************************************************")
 
-    elif (tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioIncidentes"):
+    elif tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioIncidentes":
         dicionarioIncidentes = dict()
 
         for vertice in self.dicionarioDaMAtrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
@@ -179,7 +179,7 @@ def encontrarAdjacentes(self):
 def encontrarLacos(self):
     existeLaco = False
     for vertice in self.dicionarioDaMAtrizDeAdjacencias:
-        if (self.dicionarioDaMAtrizDeAdjacencias[vertice][vertice] > 0):
+        if self.dicionarioDaMAtrizDeAdjacencias[vertice][vertice] > 0:
             existeLaco = True
     return existeLaco
 
@@ -196,11 +196,11 @@ def encontrarArestasParalelas(self):
             if vertice == verticesAdjacencias:
                 continue
             '''
-            if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias] > 1):
+            if self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias] > 1:
                 existeArestasParalelas = True
                 break
 
-        if (existeArestasParalelas == True):
+        if existeArestasParalelas == True:
             break
 
     return existeArestasParalelas
@@ -221,7 +221,7 @@ def encontrarGrauDoVertice(self, verticeQueDesejaObterGrauDeRetorno = None): #Se
                 grauDeEntradaDosVertices[verticesAdjacencias] += self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias]
 
 
-    if (verticeQueDesejaObterGrauDeRetorno == None):
+    if verticeQueDesejaObterGrauDeRetorno == None:
         print("*******************************************************************************************************")
         print("d) Grau dos Vertices:\n")
         for vertice in self.dicionarioDaMAtrizDeAdjacencias:
@@ -238,7 +238,7 @@ def encontrarGrauDoVertice(self, verticeQueDesejaObterGrauDeRetorno = None): #Se
 #e. Quais arestas incidem sobre o vértice M?
 def encontrarArestasIncidentes(self, verticeQueDesejaObterAsArestasIncidentes = None): #Se não for passado nenhum vertice como parâmetro, será impresso as arestes incidentes de todos os vertices do grafo
 
-    if (verticeQueDesejaObterAsArestasIncidentes == None):
+    if verticeQueDesejaObterAsArestasIncidentes == None:
         imprimirAdjacencias(self, "dicionarioIncidentes")
 
     else:
@@ -264,18 +264,17 @@ def encontrarSeGrafoEstaCompleto(self):
     grafoCompleto = True
     print("*******************************************************************************************************")
     print("f) O Grafo é completo?:\n")
-    if (encontrarLacos(self) or encontrarArestasParalelas(self)):
+    if encontrarLacos(self) or encontrarArestasParalelas(self):
         print("O grafo informado não é simples, pois possuí laço ou aresta paralela, logo não é completo")
         grafoCompleto = False
 
     else:
-        matrizVerticesNaoAdjacentes = criarMatrizDeAdjacencias(self, "naoAdjacentes")
-        for verticesNaoAdjacentes in range(1, len(matrizVerticesNaoAdjacentes), 2):
-            tamanhoDaListaDosVerticesNaoAdjacentes = len(matrizVerticesNaoAdjacentes[verticesNaoAdjacentes])
-            if (tamanhoDaListaDosVerticesNaoAdjacentes != 1):
-                grafoCompleto = False
+        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+            for verticesAdjacencias in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
+                if (self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias] != 1 and vertice != verticesAdjacencias):
+                    grafoCompleto = False
 
-    if (grafoCompleto == True):
+    if grafoCompleto == True:
         print("O grafo informado é completo!")
         print("*******************************************************************************************************")
     else:
@@ -299,14 +298,14 @@ class verticeComAtributoVisita:
 def percorrerGrafoDFS(self, vertice, dicionarioDaMatrizDeVerticesAdjacencias): #Pesquisa em Profundidade (Depth-First Search - DFS)
     # Verificar qual é o vertice correspondente no dicionario ao vertice adjacente
     for proximoVertice in dicionarioDaMatrizDeVerticesAdjacencias:
-        if (proximoVertice.vertice == vertice.vertice):
+        if proximoVertice.vertice == vertice.vertice:
             vertice = proximoVertice
             break
 
     vertice.visitado = True
     for verticesAdjacencias in dicionarioDaMatrizDeVerticesAdjacencias[vertice]:
-        if (dicionarioDaMatrizDeVerticesAdjacencias[vertice][verticesAdjacencias] > 0):
-            if not(verticesAdjacencias.visitado):
+        if dicionarioDaMatrizDeVerticesAdjacencias[vertice][verticesAdjacencias] > 0:
+            if not verticesAdjacencias.visitado:
                 verticesAdjacencias.visitado = True
                 percorrerGrafoDFS(self, verticesAdjacencias, dicionarioDaMatrizDeVerticesAdjacencias)
 
@@ -320,7 +319,7 @@ def encontrarSeGrafoEstaConexo(self):
         dicionarioAdjacenciasComAtributoVisita[verticeComAtributoVisita(vertice)] = dict()
 
     for indice, (vertice, verticeComAtributo) in enumerate(zip(self.dicionarioDaMAtrizDeAdjacencias, dicionarioAdjacenciasComAtributoVisita)):
-        if (indice == 0):
+        if indice == 0:
             primeiroVerticeComAtributo = verticeComAtributo
         for verticesAdjacencias in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
             dicionarioAdjacenciasComAtributoVisita[verticeComAtributo][verticeComAtributoVisita(verticesAdjacencias)] = self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacencias]
@@ -329,7 +328,7 @@ def encontrarSeGrafoEstaConexo(self):
     percorrerGrafoDFS(self, primeiroVerticeComAtributo, dicionarioAdjacenciasComAtributoVisita)
 
     for vertice in dicionarioAdjacenciasComAtributoVisita:
-        if not(vertice.visitado):
+        if not vertice.visitado:
             grafoConexo = False
 
     return grafoConexo
@@ -397,9 +396,10 @@ def menuSelecaoGrafo():
                                "g(a7)": "C-T", "g(a8)": "M-T", "g(a9)": "T-Z"}
                     break
                 elif tipoDoGrafo == '1':
-                    #Grafo simples e Completo
+                    #Grafo simples e Completo direcionado
                     vertices = ['J', 'C', 'E']
-                    arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E"}
+                    arestas = {"g(a1)": "J-C", "g(a2)": "J-E", "g(a3)": "C-E",
+                                "g(a4)": "C-J", "g(a5)": "E-J", "g(a6)": "E-C"}
                     break
 
                 elif tipoDoGrafo == '2':
@@ -410,7 +410,7 @@ def menuSelecaoGrafo():
                     break
 
                 elif tipoDoGrafo == '3':
-                    #Grafo Conexo
+                    #Grafo fracamente Conexo
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "E-P",
                                 "g(a4)": "P-M", "g(a5)": "M-T", "g(a6)": "T-Z"}
@@ -419,7 +419,7 @@ def menuSelecaoGrafo():
                     #Grafo Desconexo
                     vertices = ['J', 'C', 'E', 'P', 'M', 'T', 'Z', 'A', 'B']
                     arestas = {"g(a1)": "J-C", "g(a2)": "C-E", "g(a3)": "E-P",
-                                "g(a4)": "M-T", "g(a5)": "T-Z","g(a6)": "A-B"}
+                                "g(a4)": "M-T", "g(a5)": "T-Z", "g(a6)": "A-B"}
                     break
 
                 elif tipoDoGrafo == '5':

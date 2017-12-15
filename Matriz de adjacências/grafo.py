@@ -30,7 +30,7 @@ class Grafo:
 
         self.matrizAdjacentes = self.criarMatrizDeAdjacencias("adjacentes")
         self.matrizNaoAdjacentes = self.criarMatrizDeAdjacencias("naoAdjacentes")
-        self.dicionarioDaMAtrizDeAdjacencias = self.criarMatrizDeAdjacencias("dicionarioAdjacencias")
+        self.dicionaioDaMatrizDeAdjacencias = self.criarMatrizDeAdjacencias("dicionarioAdjacencias")
 
 
 
@@ -142,7 +142,7 @@ class Grafo:
         listaArestas = self.criarListaArestas()
         matrizVerticesAdjacentes = list()
         matrizVerticesNaoAdjacentes = list()
-        dicionarioDaMatrizDeAdjacencias = dict()
+        dicionaioDaMatrizDeAdjacencias = dict()
         posicaoAdicionarMatriz = 1
 
         for vertice in range(0, len(listaVertices)):
@@ -181,13 +181,13 @@ class Grafo:
         #Criar dicionario com os vertices e outro dicionario com os vertices e quantas ligações existem entre eles
         for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                             range(1, len(matrizVerticesAdjacentes), 2)):
-            dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]] = dict()
+            dicionaioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]] = dict()
             for verticesAdjacentes in range(0, len(matrizVerticesAdjacentes), 2):
                 if (matrizVerticesAdjacentes[verticesAdjacentes] in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]):
                     quantidadeDeElementosAdjacentes = matrizVerticesAdjacentes[listaDeVerticesAdjacentes].count(str(matrizVerticesAdjacentes[verticesAdjacentes]))
-                    dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = quantidadeDeElementosAdjacentes
+                    dicionaioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = quantidadeDeElementosAdjacentes
                 else:
-                    dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = 0
+                    dicionaioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = 0
 
         #Condição do menu de retorno
         if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
@@ -196,7 +196,7 @@ class Grafo:
             return matrizVerticesNaoAdjacentes
 
         elif (tipoDeRetornoDaMatrizDeAdjacencia == "dicionarioAdjacencias"):
-            return dicionarioDaMatrizDeAdjacencias
+            return dicionaioDaMatrizDeAdjacencias
 
 
     def __str__(self):
@@ -207,21 +207,21 @@ class Grafo:
         '''
         grafo_str = ''
 
-        for v in range(len(self.N)):
+        for vertice in self.dicionaioDaMatrizDeAdjacencias:
             grafo_str += '  '
-            grafo_str += self.N[v]
+            grafo_str += vertice
             '''
             if v < (len(self.N) - 1):  # Só coloca a vírgula se não for o último vértice
                 grafo_str += ", "
             '''
         grafo_str += '\n'
 
-        for vertice in self.dicionarioDaMAtrizDeAdjacencias:
+        for vertice in self.dicionaioDaMatrizDeAdjacencias:
             grafo_str += vertice
             #grafo_str += "\n"
-            for verticesAdjacentes in self.dicionarioDaMAtrizDeAdjacencias[vertice]:
+            for verticesAdjacentes in self.dicionaioDaMatrizDeAdjacencias[vertice]:
                         grafo_str += " "
-                        grafo_str += str(self.dicionarioDaMAtrizDeAdjacencias[vertice][verticesAdjacentes])
+                        grafo_str += str(self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes])
                         grafo_str += " "
             grafo_str += "\n"
 

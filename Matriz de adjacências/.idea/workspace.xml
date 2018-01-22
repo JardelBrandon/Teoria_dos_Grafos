@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3438ed-3efa-4ef2-839d-c81123f48358" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Questão3.iml" afterPath="$PROJECT_DIR$/.idea/Questão3.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Questao3.py" afterPath="$PROJECT_DIR$/Questao3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grafo.py" afterPath="$PROJECT_DIR$/grafo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Questão3/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Questão3/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,16 +20,34 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Questao3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Questao3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="258" column="0" lean-forward="false" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
               <folding>
                 <element signature="e#1133#1156#0" expanded="true" />
+                <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+                <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+                <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+                <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
               </folding>
             </state>
           </provider>
@@ -41,7 +56,7 @@
       <file leaf-file-name="Questao2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Questao2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
+            <state relative-caret-position="1332">
               <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
@@ -51,8 +66,8 @@
       <file leaf-file-name="grafo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grafo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="223" column="77" lean-forward="false" selection-start-line="223" selection-start-column="77" selection-end-line="223" selection-end-column="77" />
+            <state relative-caret-position="4014">
+              <caret line="223" column="76" lean-forward="false" selection-start-line="223" selection-start-column="76" selection-end-line="223" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -61,9 +76,11 @@
       <file leaf-file-name="ImprimirMatrizAdjacencias.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Questão3/ImprimirMatrizAdjacencias.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="126">
               <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-              <folding />
+              <folding>
+                <marker date="1513367420019" expanded="true" signature="90:1054" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,8 +135,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -137,14 +154,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="zip&#9;null&#9;null&#10;percorrer&#9;null&#9;null&#10;grafo_pa&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -162,7 +179,58 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.Questao3 (1)">
-    <configuration default="false" name="Questao3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Q3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Questão3" />
+      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="Questao 3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Questão3" />
+      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="Questao3 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Questão3" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Questao3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="Questao3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -178,26 +246,9 @@
       <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration default="false" name="Q3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Teste" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Teste" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -212,41 +263,7 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Teste.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Questao 3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="C:\Users\robotica\Documents\GitHub\Teoria_dos_Grafos\Matriz de adjacências\Questao3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Questao3 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Questao3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -263,6 +280,7 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
@@ -275,38 +293,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ccruntests" factoryName="Run Study Tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Questão3" />
-      <option name="studyTest" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Attests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -338,15 +324,10 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -359,19 +340,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Questão3" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Questão3" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -388,11 +378,6 @@
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
     <list size="5">
@@ -438,27 +423,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1386" height="788" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22707888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24208145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22893482" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34700856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23028392" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39432177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39432177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34700856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22905983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3931624" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -505,13 +501,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Questao3.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Questao3.py</url>
-          <line>203</line>
-          <option name="timeStamp" value="55" />
+          <line>204</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -524,19 +515,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="61" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grafo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Questão2/Questao2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -551,6 +538,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>
@@ -592,6 +598,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>
@@ -633,6 +658,25 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>
@@ -674,6 +718,25 @@
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>
@@ -730,6 +793,25 @@
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>
@@ -752,26 +834,37 @@
     <entry file="file://$PROJECT_DIR$/../../Algoritmos_e_Programacao/Atividades/Roteiro 9 - Matrizes/Programas exemplos/Programas do professor/recebe_elementos_usuario.py" />
     <entry file="file://$PROJECT_DIR$/../../Algoritmos_e_Programacao/Atividades/Roteiro 9 - Matrizes/Programas/Roteiro 9 Questão 1.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/1410873039/builtins.py" />
-    <entry file="file://C:/Program Files/Python35/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/Q3" />
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/21627504/builtins.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/codecs.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/urllib/parse.py" />
     <entry file="file://$PROJECT_DIR$/matrizAdjacencias.py" />
     <entry file="file://$PROJECT_DIR$/Questao1(grafo_Paraiba).py" />
-    <entry file="file://$PROJECT_DIR$/../Questão3/Questao3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2652">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Questao3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="310" column="101" lean-forward="false" selection-start-line="310" selection-start-column="101" selection-end-line="310" selection-end-column="101" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>
@@ -779,36 +872,72 @@
     <entry file="file://$PROJECT_DIR$/Teste.py" />
     <entry file="file://$PROJECT_DIR$/TesteDict.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/codecs.py" />
-    <entry file="file://$PROJECT_DIR$/Questao2.py">
+    <entry file="file://$PROJECT_DIR$/../Questão3/ImprimirMatrizAdjacencias.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="126">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <marker date="1513367420019" expanded="true" signature="90:1054" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Questão3/ImprimirMatrizAdjacencias.py">
+    <entry file="file://$PROJECT_DIR$/Questao2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="1332">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grafo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="223" column="77" lean-forward="false" selection-start-line="223" selection-start-column="77" selection-end-line="223" selection-end-column="77" />
+        <state relative-caret-position="4014">
+          <caret line="223" column="76" lean-forward="false" selection-start-line="223" selection-start-column="76" selection-end-line="223" selection-end-column="76" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python35/Lib/codecs.py" />
+    <entry file="file://$PROJECT_DIR$/../Questão3/Questao3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Caminho Euleriano/Questao3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Questao3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="258" column="0" lean-forward="false" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+        <state relative-caret-position="243">
+          <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
           <folding>
             <element signature="e#1133#1156#0" expanded="true" />
+            <marker date="1516328296000" expanded="true" signature="10786:10791" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="14807:14925" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="14807:14981" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15216:15269" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15329:18604" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="15352:15983" ph="&quot;...&quot;" />
+            <marker date="1516328296000" expanded="true" signature="16061:16437" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16206:16410" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16478:16768" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16615:16741" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16810:17129" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="16945:17102" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17171:17468" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17315:17441" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17509:17808" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17655:17781" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="17850:18021" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18063:18442" ph="..." />
+            <marker date="1516328296000" expanded="true" signature="18211:18415" ph="..." />
           </folding>
         </state>
       </provider>

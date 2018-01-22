@@ -202,24 +202,37 @@ def percorrerGrafoDFS(self, vertice, dicionarioDaMatrizDeVerticesAdjacencias): #
 
 
 def encontrarSeGrafoEstaConexo(self):
-    grafoConexo = True
     dicionarioAdjacenciasComAtributoVisita = dict()
     # Criar o objeto verticeComAtributoVisita marcando todos como não visitados
     for vertice in self.dicionaioDaMatrizDeAdjacencias:
         dicionarioAdjacenciasComAtributoVisita[verticeComAtributoVisita(vertice)] = dict()
 
-    for indice, (vertice, verticeComAtributo) in enumerate(zip(self.dicionaioDaMatrizDeAdjacencias, dicionarioAdjacenciasComAtributoVisita)):
-        if indice == 0:
-            primeiroVerticeComAtributo = verticeComAtributo
+
+    for vertice, verticeComAtributo in zip(self.dicionaioDaMatrizDeAdjacencias, dicionarioAdjacenciasComAtributoVisita):
         for verticesAdjacencias in self.dicionaioDaMatrizDeAdjacencias[verticeComAtributo.vertice]:
             dicionarioAdjacenciasComAtributoVisita[verticeComAtributo][verticeComAtributoVisita(verticesAdjacencias)] = self.dicionaioDaMatrizDeAdjacencias[verticeComAtributo.vertice][verticesAdjacencias]
 
-    #print(dicionarioAdjacenciasComAtributoVisita)
-    percorrerGrafoDFS(self, primeiroVerticeComAtributo, dicionarioAdjacenciasComAtributoVisita)
 
-    for vertice in dicionarioAdjacenciasComAtributoVisita:
-        if not vertice.visitado:
-            grafoConexo = False
+    #Percorrer todos os vertices do grafo para verificar se a partir de algum vertice o grafo é conexo
+    for verticeComAtributo in dicionarioAdjacenciasComAtributoVisita:
+        grafoConexo = True
+        percorrerGrafoDFS(self, verticeComAtributo, dicionarioAdjacenciasComAtributoVisita)
+
+        #Verificar se a partir desse vertice o grafo é conexo
+        for vertice in dicionarioAdjacenciasComAtributoVisita:
+            if not vertice.visitado:
+                grafoConexo = False
+                break
+
+        if grafoConexo:
+            break
+
+        else: #Se o grafo não for conexo a partir desse vertice, então o grafo é zerado e um novo teste com o próximo vertice será realizado
+            for verticeComAtributo in dicionarioAdjacenciasComAtributoVisita:
+                verticeComAtributo.visitado = False
+                for verticesAdjacencias in dicionarioAdjacenciasComAtributoVisita[verticeComAtributo]:
+                    verticesAdjacencias.visitado = False
+
 
     return grafoConexo
 
@@ -257,7 +270,6 @@ def imprimirInformacoesDoGrafo(self):
     print("*******************************************************************************************************")
     print("1) O grafo é conexo?:\n")
     print(encontrarSeGrafoEstaConexo(self),
-          "\nObs: A resposta obtida a cima, é referente ao teste se o grafo é fracamente conectado(ou apenas conectado)"
           "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
 
 def menuSelecaoGrafo():

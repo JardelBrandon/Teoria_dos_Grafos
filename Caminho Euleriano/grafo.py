@@ -9,7 +9,7 @@ class Grafo:
     QTDE_MAX_SEPARADOR = 1
     SEPARADOR_ARESTA = '-'
 
-    def __init__(self, N=[], A={}):
+    def __init__(self, N=[], A={}, direcionadoOuNaoDirecionado = bool):
         '''
         Constrói um objeto do tipo Grafo. Se nenhum parâmetro for passado, cria um Grafo vazio.
         Se houver alguma aresta ou algum vértice inválido, uma exceção é lançada.
@@ -28,9 +28,13 @@ class Grafo:
 
         self.A = A
 
+        self.grafoDirecionado = direcionadoOuNaoDirecionado
         self.matrizAdjacentes = self.criarMatrizDeAdjacencias("adjacentes")
         self.matrizNaoAdjacentes = self.criarMatrizDeAdjacencias("naoAdjacentes")
-        self.dicionaioDaMatrizDeAdjacencias = self.criarMatrizDeAdjacencias("dicionarioAdjacencias")
+        self.dicionarioDaMatrizDeAdjacencias = self.criarMatrizDeAdjacencias("dicionarioAdjacencias")
+        self.dicionarioGrauDeEntradaDosVertices = dict()
+        self.dicionarioGrauDeSaidaDosVertices = dict()
+        self.dicionarioGrauDosVertices = dict()
 
 
 
@@ -142,7 +146,7 @@ class Grafo:
         listaArestas = self.criarListaArestas()
         matrizVerticesAdjacentes = list()
         matrizVerticesNaoAdjacentes = list()
-        dicionaioDaMatrizDeAdjacencias = dict()
+        dicionarioDaMatrizDeAdjacencias = dict()
         posicaoAdicionarMatriz = 1
 
         for vertice in range(0, len(listaVertices)):
@@ -159,11 +163,12 @@ class Grafo:
                     if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 0):
                         matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
                         #print("entrou 0")
-                    ''' Se o grafo for do tipo não direcionando, descomentar esta parte do código 
-                    elif (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
-                        matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
-                        #print("Entrou 1")
-                    '''
+
+                    if not self.grafoDirecionado: #Se o grafo for do tipo não direcionando
+                        if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
+                            matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
+                            #print("Entrou 1")
+
             #Matriz de vertices não adjacentes, realiza a diferença entre o conjunto de todos vertices e o conjunto de vertices adjacentes,
             #o resultado da diferença são os vertices não adjacentes
             #print()
@@ -181,13 +186,13 @@ class Grafo:
         #Criar dicionario com os vertices e outro dicionario com os vertices e quantas ligações existem entre eles
         for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
                                             range(1, len(matrizVerticesAdjacentes), 2)):
-            dicionaioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]] = dict()
+            dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]] = dict()
             for verticesAdjacentes in range(0, len(matrizVerticesAdjacentes), 2):
                 if (matrizVerticesAdjacentes[verticesAdjacentes] in matrizVerticesAdjacentes[listaDeVerticesAdjacentes]):
                     quantidadeDeElementosAdjacentes = matrizVerticesAdjacentes[listaDeVerticesAdjacentes].count(str(matrizVerticesAdjacentes[verticesAdjacentes]))
-                    dicionaioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = quantidadeDeElementosAdjacentes
+                    dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = quantidadeDeElementosAdjacentes
                 else:
-                    dicionaioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = 0
+                    dicionarioDaMatrizDeAdjacencias[matrizVerticesAdjacentes[vertice]][matrizVerticesAdjacentes[verticesAdjacentes]] = 0
 
         #Condição do menu de retorno
         if (tipoDeRetornoDaMatrizDeAdjacencia == "adjacentes"):
@@ -196,7 +201,7 @@ class Grafo:
             return matrizVerticesNaoAdjacentes
 
         elif (tipoDeRetornoDaMatrizDeAdjacencia == "dicionarioAdjacencias"):
-            return dicionaioDaMatrizDeAdjacencias
+            return dicionarioDaMatrizDeAdjacencias
 
 
     def __str__(self):
@@ -207,7 +212,13 @@ class Grafo:
         '''
         grafo_str = ''
 
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
+        if self.grafoDirecionado:
+            grafo_str += "Grafo direcionado:\n"
+
+        else:
+            grafo_str += "Grafo não direcionado:\n"
+
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
             grafo_str += '  '
             grafo_str += vertice
             '''
@@ -216,14 +227,30 @@ class Grafo:
             '''
         grafo_str += '\n'
 
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
-            grafo_str += vertice
-            #grafo_str += "\n"
-            for verticesAdjacentes in self.dicionaioDaMatrizDeAdjacencias[vertice]:
+        if self.grafoDirecionado:
+            for vertice in self.dicionarioDaMatrizDeAdjacencias:
+                grafo_str += vertice
+                #grafo_str += "\n"
+                for verticesAdjacentes in self.dicionarioDaMatrizDeAdjacencias[vertice]:
+                    grafo_str += " "
+                    grafo_str += str(self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes])
+                    grafo_str += " "
+                grafo_str += "\n"
+
+        else:
+            for indeceX, vertice in enumerate(self.dicionarioDaMatrizDeAdjacencias):
+                grafo_str += vertice
+                #grafo_str += "\n"
+                for indeceY, verticesAdjacentes in enumerate(self.dicionarioDaMatrizDeAdjacencias[vertice]):
+                    if indeceX <= indeceY:
                         grafo_str += " "
-                        grafo_str += str(self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes])
+                        grafo_str += str(self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes])
                         grafo_str += " "
-            grafo_str += "\n"
+                    else:
+                        grafo_str += " "
+                        grafo_str += "-"
+                        grafo_str += " "
+                grafo_str += "\n"
 
         return grafo_str
 

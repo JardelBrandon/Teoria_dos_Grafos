@@ -31,10 +31,10 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
     if tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioNaoAdjacentes":
         print("*******************************************************************************************************")
         print("a) Vertices não adjacentes:\n")
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
             print("O vertice:", vertice, "Não é adjacente aos vertices ->", end=" ")
-            for verticesAdjacentes in self.dicionaioDaMatrizDeAdjacencias[vertice]:
-                if self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes] == 0:
+            for verticesAdjacentes in self.dicionarioDaMatrizDeAdjacencias[vertice]:
+                if self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes] == 0:
                     print(verticesAdjacentes, end=" ")
             print()
         print("*******************************************************************************************************")
@@ -42,18 +42,18 @@ def imprimirAdjacencias(self, tipoDeImpressaoDaMatrizDeAdjacencias):
     elif tipoDeImpressaoDaMatrizDeAdjacencias == "dicionarioIncidentes":
         dicionarioIncidentes = dict()
 
-        for vertice in self.dicionaioDaMatrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
+        for vertice in self.dicionarioDaMatrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
             dicionarioIncidentes[vertice] = list()
 
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
-            for verticesAdjacentes in self.dicionaioDaMatrizDeAdjacencias:
-                #if (self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes] > 0):
-                for QuantidadeDeIncidencias in range(0, self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes]):
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
+            for verticesAdjacentes in self.dicionarioDaMatrizDeAdjacencias:
+                #if (self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes] > 0):
+                for QuantidadeDeIncidencias in range(0, self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes]):
                     dicionarioIncidentes[verticesAdjacentes].append(vertice)
 
         print("*******************************************************************************************************")
         print("e) Arestas que são incidentes ao vertice:\n")
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
             print("O vertice:", vertice, "Possuí arestas incidentes dos seguintes vertices ->", dicionarioIncidentes[vertice])
         print("*******************************************************************************************************")
 
@@ -68,8 +68,8 @@ def encontrarAdjacentes(self):
 #b. Há algum vértice adjacente a ele mesmo? (Retorne True ou False)
 def encontrarLacos(self):
     existeLaco = False
-    for vertice in self.dicionaioDaMatrizDeAdjacencias:
-        if self.dicionaioDaMatrizDeAdjacencias[vertice][vertice] > 0:
+    for vertice in self.dicionarioDaMatrizDeAdjacencias:
+        if self.dicionarioDaMatrizDeAdjacencias[vertice][vertice] > 0:
             existeLaco = True
     return existeLaco
 
@@ -77,8 +77,8 @@ def encontrarLacos(self):
 def encontrarArestasParalelas(self):
     existeArestasParalelas = False
 
-    for vertice in self.dicionaioDaMatrizDeAdjacencias:
-        for verticesAdjacencias in self.dicionaioDaMatrizDeAdjacencias[vertice]:
+    for vertice in self.dicionarioDaMatrizDeAdjacencias:
+        for verticesAdjacencias in self.dicionarioDaMatrizDeAdjacencias[vertice]:
             ''' 
             Obs: Estou com dúvida em relação ao caso de um vertice com mais de um laço incidente a este vertice
             Se nesse caso esses laços são considerados como arestas paralelas! 
@@ -86,7 +86,7 @@ def encontrarArestasParalelas(self):
             if vertice == verticesAdjacencias:
                 continue
             '''
-            if self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacencias] > 1:
+            if self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacencias] > 1:
                 existeArestasParalelas = True
                 break
 
@@ -97,33 +97,69 @@ def encontrarArestasParalelas(self):
 
 #d. Qual o grau do vértice C (Faça uma função genérica para calcular o grau de qualquer vértice. Em seguida, use-a para verificar o grau do vértice C)
 def encontrarGrauDoVertice(self, verticeQueDesejaObterGrauDeRetorno = None): #Se não for passado nenhum vertice como parâmetro, será impresso o grau de todos os vertices do grafo
-    grauDeEntradaDosVertices = dict()
-    grauDeSaidaDosVertices = dict()
+    if self.grafoDirecionado:
+        grauDeEntradaDosVertices = dict()
+        grauDeSaidaDosVertices = dict()
 
-    for vertice in self.dicionaioDaMatrizDeAdjacencias: #Inicializador dos dicionarios dos graus
-        grauDeSaidaDosVertices[vertice] = 0
-        grauDeEntradaDosVertices[vertice] = 0
+        for vertice in self.dicionarioDaMatrizDeAdjacencias: #Inicializador dos dicionarios dos graus
+            grauDeSaidaDosVertices[vertice] = 0
+            grauDeEntradaDosVertices[vertice] = 0
 
-    for vertice in self.dicionaioDaMatrizDeAdjacencias:
-        for verticesAdjacencias in self.dicionaioDaMatrizDeAdjacencias[vertice]:
-            if (self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacencias] > 0):
-                grauDeSaidaDosVertices[vertice] += self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacencias]
-                grauDeEntradaDosVertices[verticesAdjacencias] += self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacencias]
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
+            for verticesAdjacencias in self.dicionarioDaMatrizDeAdjacencias[vertice]:
+                if (self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacencias] > 0):
+                    grauDeSaidaDosVertices[vertice] += self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacencias]
+                    grauDeEntradaDosVertices[verticesAdjacencias] += self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacencias]
+
+        self.dicionarioGrauDeEntradaDosVertices = grauDeEntradaDosVertices
+        self.dicionarioGrauDeSaidaDosVertices = grauDeSaidaDosVertices
+
+        if verticeQueDesejaObterGrauDeRetorno == None:
+            print("*******************************************************************************************************")
+            print("d) Grau dos Vertices:\n")
+            for vertice in self.dicionarioDaMatrizDeAdjacencias:
+                print("Grau de entrada do Vertice :", vertice, "->", grauDeEntradaDosVertices[vertice])
+                print("Grau de saída do Vertice :", vertice, "->", grauDeSaidaDosVertices[vertice])
+            print("*******************************************************************************************************")
+        else:
+            print("*******************************************************************************************************")
+            print("d) Grau dos Vertices:\n")
+            print("Grau de entrada do Vertice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDeEntradaDosVertices[verticeQueDesejaObterGrauDeRetorno])
+            print("Grau de saída do Vertice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDeSaidaDosVertices[verticeQueDesejaObterGrauDeRetorno])
+            print("*******************************************************************************************************")
 
 
-    if verticeQueDesejaObterGrauDeRetorno == None:
-        print("*******************************************************************************************************")
-        print("d) Grau dos Vertices:\n")
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
-            print("Grau de entrada do Vertice :", vertice, "->", grauDeEntradaDosVertices[vertice])
-            print("Grau de saída do Vertice :", vertice, "->", grauDeSaidaDosVertices[vertice])
-        print("*******************************************************************************************************")
+
     else:
-        print("*******************************************************************************************************")
-        print("d) Grau dos Vertices:\n")
-        print("Grau de entrada do Vertice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDeEntradaDosVertices[verticeQueDesejaObterGrauDeRetorno])
-        print("Grau de saída do Vertice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDeSaidaDosVertices[verticeQueDesejaObterGrauDeRetorno])
-        print("*******************************************************************************************************")
+        dicionarioGrauDosVertices = dict()
+        matrizVerticesAdjacentes = self.matrizAdjacentes
+
+        for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                                      range(1, len(matrizVerticesAdjacentes), 2)):
+            grauDoVertice = len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])
+            dicionarioGrauDosVertices[matrizVerticesAdjacentes[vertice]] = grauDoVertice
+
+        if (verticeQueDesejaObterGrauDeRetorno == None):
+            print(
+                "*******************************************************************************************************")
+            print("d) Grau dos Vertices:\n")
+            for vertice, listaDeVerticesAdjacentes in zip(range(0, len(matrizVerticesAdjacentes), 2),
+                                                          range(1, len(matrizVerticesAdjacentes), 2)):
+                grauDoVertice = len(matrizVerticesAdjacentes[listaDeVerticesAdjacentes])
+                print("Grau do Vertice :", matrizVerticesAdjacentes[vertice], "->", grauDoVertice)
+            print(
+                "*******************************************************************************************************")
+        else:
+            posicaoDoVertice = matrizVerticesAdjacentes.index(verticeQueDesejaObterGrauDeRetorno)
+            grauDoVertice = len(matrizVerticesAdjacentes[posicaoDoVertice + 1])
+            print(
+                "*******************************************************************************************************")
+            print("d) Grau dos Vertices:\n")
+            print("Grau do Verrtice :", verticeQueDesejaObterGrauDeRetorno, "->", grauDoVertice)
+            print(
+                "*******************************************************************************************************")
+
+        self.dicionarioGrauDosVertices = dicionarioGrauDosVertices
 
 #e. Quais arestas incidem sobre o vértice M?
 def encontrarArestasIncidentes(self, verticeQueDesejaObterAsArestasIncidentes = None): #Se não for passado nenhum vertice como parâmetro, será impresso as arestes incidentes de todos os vertices do grafo
@@ -134,13 +170,13 @@ def encontrarArestasIncidentes(self, verticeQueDesejaObterAsArestasIncidentes = 
     else:
         dicionarioIncidentes = dict()
 
-        for vertice in self.dicionaioDaMatrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
+        for vertice in self.dicionarioDaMatrizDeAdjacencias: # Incializar dicionario com a lista dos vertices incidentes
             dicionarioIncidentes[vertice] = list()
 
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
-            for verticesAdjacentes in self.dicionaioDaMatrizDeAdjacencias:
-                #if (self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes] > 0):
-                for QuantidadeDeIncidencias in range(0, self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacentes]):
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
+            for verticesAdjacentes in self.dicionarioDaMatrizDeAdjacencias:
+                #if (self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes] > 0):
+                for QuantidadeDeIncidencias in range(0, self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes]):
                     dicionarioIncidentes[verticesAdjacentes].append(vertice)
 
         print("*******************************************************************************************************")
@@ -159,9 +195,9 @@ def encontrarSeGrafoEstaCompleto(self):
         grafoCompleto = False
 
     else:
-        for vertice in self.dicionaioDaMatrizDeAdjacencias:
-            for verticesAdjacencias in self.dicionaioDaMatrizDeAdjacencias[vertice]:
-                if (self.dicionaioDaMatrizDeAdjacencias[vertice][verticesAdjacencias] != 1 and vertice != verticesAdjacencias):
+        for vertice in self.dicionarioDaMatrizDeAdjacencias:
+            for verticesAdjacencias in self.dicionarioDaMatrizDeAdjacencias[vertice]:
+                if (self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacencias] != 1 and vertice != verticesAdjacencias):
                     grafoCompleto = False
 
     if grafoCompleto == True:
@@ -204,13 +240,13 @@ def percorrerGrafoDFS(self, vertice, dicionarioDaMatrizDeVerticesAdjacencias): #
 def encontrarSeGrafoEstaConexo(self):
     dicionarioAdjacenciasComAtributoVisita = dict()
     # Criar o objeto verticeComAtributoVisita marcando todos como não visitados
-    for vertice in self.dicionaioDaMatrizDeAdjacencias:
+    for vertice in self.dicionarioDaMatrizDeAdjacencias:
         dicionarioAdjacenciasComAtributoVisita[verticeComAtributoVisita(vertice)] = dict()
 
 
-    for vertice, verticeComAtributo in zip(self.dicionaioDaMatrizDeAdjacencias, dicionarioAdjacenciasComAtributoVisita):
-        for verticesAdjacencias in self.dicionaioDaMatrizDeAdjacencias[verticeComAtributo.vertice]:
-            dicionarioAdjacenciasComAtributoVisita[verticeComAtributo][verticeComAtributoVisita(verticesAdjacencias)] = self.dicionaioDaMatrizDeAdjacencias[verticeComAtributo.vertice][verticesAdjacencias]
+    for vertice, verticeComAtributo in zip(self.dicionarioDaMatrizDeAdjacencias, dicionarioAdjacenciasComAtributoVisita):
+        for verticesAdjacencias in self.dicionarioDaMatrizDeAdjacencias[verticeComAtributo.vertice]:
+            dicionarioAdjacenciasComAtributoVisita[verticeComAtributo][verticeComAtributoVisita(verticesAdjacencias)] = self.dicionarioDaMatrizDeAdjacencias[verticeComAtributo.vertice][verticesAdjacencias]
 
 
     #Percorrer todos os vertices do grafo para verificar se a partir de algum vertice o grafo é conexo
@@ -239,7 +275,7 @@ def encontrarSeGrafoEstaConexo(self):
 
 
 def imprimirInformacoesDoGrafo(self):
-    print(self.dicionaioDaMatrizDeAdjacencias)
+    print(self.dicionarioDaMatrizDeAdjacencias)
     print("*******************************************************************************************************")
     print("Imprimindo as informações pertinentes ao grafo informado(Utilizando matriz de Adjacências):")
     print("*******************************************************************************************************")
@@ -269,10 +305,22 @@ def imprimirInformacoesDoGrafo(self):
 
     print("*******************************************************************************************************")
     print("1) O grafo é conexo?:\n")
-    print(encontrarSeGrafoEstaConexo(self),
-          "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
+    print(encontrarSeGrafoEstaConexo(self), "\n*******************************************************************************************************") #Invocando a função que resolve a letra i da 3 questão
 
 def menuSelecaoGrafo():
+    while True:
+        print("Se deseja informar um grafo não direcionado; Digite -> 0\nOu se deseja usar um grafo direcionado; Digite -> 1: ")
+        grafoDirecionado = input()
+        if grafoDirecionado == '0':
+            grafoDirecionado = False
+            break
+        elif grafoDirecionado == '1':
+            grafoDirecionado = True
+            break
+        else:
+            print("Por favor, digite um valor referente a operação que deseja realizar.\n"
+                  "Atente-se que os valores possíveis são 0 ou 1!")
+
     while True:
         print("Se deseja informar um grafo; Digite -> 0\nOu se deseja usar um grafo presente na base de dados; Digite -> 1: ")
         selecaoDoGrafo = input()
@@ -344,7 +392,7 @@ def menuSelecaoGrafo():
             if tipoDoGrafo == '7':
                 continue
             else:
-                grafo = Grafo(vertices, arestas)
+                grafo = Grafo(vertices, arestas, grafoDirecionado)
                 break
         else:
             print("Por favor, digite um valor referente a operação que deseja realizar.\n"

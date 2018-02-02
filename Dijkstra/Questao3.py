@@ -326,8 +326,10 @@ def menuSelecaoGrafo():
 
                 elif tipoDoGrafo == '5':
                     #Grafo simples
-                    vertices = ['J', 'C', 'E']
-                    arestas = {"g(a1)": "J-C", "g(a2)": "C-E"}
+                    vertices = ['S', 'U', 'V', 'X', 'Y']
+                    arestas = {"g(a1)": "S-U", "g(a2)": "S-X", "g(a3)": "X-Y",
+                               "g(a4)": "X-U", "g(a5)": "U-V", "g(a6)": "U-X",
+                               "g(a7)": "X-V", "g(a8)": "Y-V", "g(a9)": "U-V"}
                     break
 
                 elif tipoDoGrafo == '6':

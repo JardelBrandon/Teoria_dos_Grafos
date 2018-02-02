@@ -1,5 +1,5 @@
 import copy
-import cmath
+import math
 
 class VerticeInvalidoException(Exception):
     pass
@@ -212,7 +212,7 @@ class Grafo:
                     matrizComPesos[vertice][verticeAdjacente], peso)
 
                 else:
-                    matrizComPesos[vertice][verticeAdjacente] = (0, cmath.inf)
+                    matrizComPesos[vertice][verticeAdjacente] = (0, math.inf)
         return matrizComPesos
 
     def __str__(self):

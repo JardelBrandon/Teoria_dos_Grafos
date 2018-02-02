@@ -1,5 +1,5 @@
 from Questao3 import *
-import cmath
+import math
 
 grafo = menuSelecaoGrafo()
 imprimirInformacoesDoGrafo(grafo)
@@ -11,7 +11,7 @@ def dijkstra(self, verticeInicial, verticeFinal):
 
     #Iniciar vertices
     for vertice in self.dicionarioDaMatrizDeAdjacenciasComPesos:
-        pesoDoMenorCaminho[vertice] = cmath.inf
+        pesoDoMenorCaminho[vertice] = math.inf
         fechado[vertice] = False
         predecessor[vertice] = None
 
@@ -27,12 +27,6 @@ def dijkstra(self, verticeInicial, verticeFinal):
                     pesoDoMenorCaminho[j] = pesoDoMenorCaminho[k] + self.dicionarioDaMatrizDeAdjacenciasComPesos[k][j][1]
                     predecessor[j] = k
 
-                '''
-                if fechado[j] == False and pesoDoMenorCaminho[j] == pesoDoMenorCaminho[k] + self.dicionarioDaMatrizDeAdjacenciasComPesos[k]:
-                    predecessor[j] = list(predecessor[j])
-                    predecessor[j].append(k)
-                '''
-
     print("Menor caminho do vertice incial, até o vetice final", verticeInicial, "->", verticeFinal)
     caminho = list()
     if predecessor[verticeFinal] != None:
@@ -42,19 +36,10 @@ def dijkstra(self, verticeInicial, verticeFinal):
             x = predecessor[x]
 
         print(caminho)
+        print("Peso total do menor caminho: ", pesoDoMenorCaminho[verticeFinal])
     else:
         print("Não existe um caminho entre os vertices!")
 
-
-
-
-    '''
-    for r in self.dicionarioDaMatrizDeAdjacenciasComPesos[w]:
-        if self.dicionarioDaMatrizDeAdjacenciasComPesos[w][r][0] > 0:
-            if fechado[r] == False and pesoDoMenorCaminho[r] > pesoDoMenorCaminho[w] + self.dicionarioDaMatrizDeAdjacenciasComPesos[w][r][1]:
-                pesoDoMenorCaminho[r] = pesoDoMenorCaminho[w] + self.dicionarioDaMatrizDeAdjacenciasComPesos[w][r][1]
-                predecessor[r] = w
-    '''
 
 
 inicio = input("Digite o vertice raiz da busca: ")

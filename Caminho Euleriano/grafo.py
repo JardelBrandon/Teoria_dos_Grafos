@@ -9,7 +9,7 @@ class Grafo:
     QTDE_MAX_SEPARADOR = 1
     SEPARADOR_ARESTA = '-'
 
-    def __init__(self, N=[], A={}, direcionadoOuNaoDirecionado = bool):
+    def __init__(self, N=[], A={}):
         '''
         Constrói um objeto do tipo Grafo. Se nenhum parâmetro for passado, cria um Grafo vazio.
         Se houver alguma aresta ou algum vértice inválido, uma exceção é lançada.
@@ -28,12 +28,9 @@ class Grafo:
 
         self.A = A
 
-        self.grafoDirecionado = direcionadoOuNaoDirecionado
         self.matrizAdjacentes = self.criarMatrizDeAdjacencias("adjacentes")
         self.matrizNaoAdjacentes = self.criarMatrizDeAdjacencias("naoAdjacentes")
         self.dicionarioDaMatrizDeAdjacencias = self.criarMatrizDeAdjacencias("dicionarioAdjacencias")
-        self.dicionarioGrauDeEntradaDosVertices = dict()
-        self.dicionarioGrauDeSaidaDosVertices = dict()
         self.dicionarioGrauDosVertices = dict()
 
 
@@ -164,10 +161,9 @@ class Grafo:
                         matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta + 1)])
                         #print("entrou 0")
 
-                    if not self.grafoDirecionado: #Se o grafo for do tipo não direcionando
-                        if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
-                            matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
-                            #print("Entrou 1")
+                    if (listaVertices[vertice] == listaArestas[arestasAdjacentes][aresta] and aresta == 1):
+                        matrizVerticesAdjacentes[(posicaoAdicionarMatriz)].append(listaArestas[arestasAdjacentes][(aresta - 1)])
+                        #print("Entrou 1")
 
             #Matriz de vertices não adjacentes, realiza a diferença entre o conjunto de todos vertices e o conjunto de vertices adjacentes,
             #o resultado da diferença são os vertices não adjacentes
@@ -211,12 +207,7 @@ class Grafo:
         :return: Uma string que representa o grafo
         '''
         grafo_str = ''
-
-        if self.grafoDirecionado:
-            grafo_str += "Grafo direcionado:\n"
-
-        else:
-            grafo_str += "Grafo não direcionado:\n"
+        grafo_str += "Grafo não direcionado:\n"
 
         for vertice in self.dicionarioDaMatrizDeAdjacencias:
             grafo_str += '  '
@@ -227,30 +218,19 @@ class Grafo:
             '''
         grafo_str += '\n'
 
-        if self.grafoDirecionado:
-            for vertice in self.dicionarioDaMatrizDeAdjacencias:
-                grafo_str += vertice
-                #grafo_str += "\n"
-                for verticesAdjacentes in self.dicionarioDaMatrizDeAdjacencias[vertice]:
+        for indeceX, vertice in enumerate(self.dicionarioDaMatrizDeAdjacencias):
+            grafo_str += vertice
+            #grafo_str += "\n"
+            for indeceY, verticesAdjacentes in enumerate(self.dicionarioDaMatrizDeAdjacencias[vertice]):
+                if indeceX <= indeceY:
                     grafo_str += " "
                     grafo_str += str(self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes])
                     grafo_str += " "
-                grafo_str += "\n"
-
-        else:
-            for indeceX, vertice in enumerate(self.dicionarioDaMatrizDeAdjacencias):
-                grafo_str += vertice
-                #grafo_str += "\n"
-                for indeceY, verticesAdjacentes in enumerate(self.dicionarioDaMatrizDeAdjacencias[vertice]):
-                    if indeceX <= indeceY:
-                        grafo_str += " "
-                        grafo_str += str(self.dicionarioDaMatrizDeAdjacencias[vertice][verticesAdjacentes])
-                        grafo_str += " "
-                    else:
-                        grafo_str += " "
-                        grafo_str += "-"
-                        grafo_str += " "
-                grafo_str += "\n"
+                else:
+                    grafo_str += " "
+                    grafo_str += "-"
+                    grafo_str += " "
+            grafo_str += "\n"
 
         return grafo_str
 

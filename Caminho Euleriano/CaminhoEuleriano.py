@@ -4,42 +4,23 @@ grafo = menuSelecaoGrafo()
 imprimirInformacoesDoGrafo(grafo)
 
 def caminhoEuleriano(self):
-    if self.grafoDirecionado:
-        if encontrarSeGrafoEstaConexo(self):
-            #Verifica se o grafo direcionado é balanceado
-            if (sum(self.dicionarioGrauDeEntradaDosVertices.values()) == sum(self.dicionarioGrauDeSaidaDosVertices.values())):
-                print("*******************************************************************************************************")
-                print("Existe caminho Euleriano")
-                print("*******************************************************************************************************")
+    grafoEuleriano = False
+    if encontrarSeGrafoEstaConexo(self):
+        totalVerticesGrauImpar = 0
+        for grauDoVertice in self.dicionarioGrauDosVertices.values():
+            if grauDoVertice % 2 != 0:
+                totalVerticesGrauImpar += 1
 
-            else:
-                print("*******************************************************************************************************")
-                print("Não existe caminho Euleriano")
-                print("*******************************************************************************************************")
+        if totalVerticesGrauImpar < 3:
+            grafoEuleriano = True
 
-        else:
-            print("*******************************************************************************************************")
-            print("Não existe caminho Euleriano")
-            print("*******************************************************************************************************")
-
+    if grafoEuleriano:
+        print("*******************************************************************************************************")
+        print("Existe um caminho Euleriano")
+        print("*******************************************************************************************************")
     else:
-        if encontrarSeGrafoEstaConexo(self):
-            totalVerticesGrauImpar = 0
-            for grauDoVertice in self.dicionarioGrauDosVertices.values():
-                if grauDoVertice % 2 != 0:
-                    totalVerticesGrauImpar += 1
+        print("*******************************************************************************************************")
+        print("Não existe caminho Euleriano")
+        print("*******************************************************************************************************")
 
-            if totalVerticesGrauImpar > 2:
-                print("*******************************************************************************************************")
-                print("Não existe caminho Euleriano")
-                print("*******************************************************************************************************")
-
-            else:
-                print("*******************************************************************************************************")
-                print("Existe um caminho Euleriano")
-                print("*******************************************************************************************************")
-        else:
-            print("*******************************************************************************************************")
-            print("Não existe caminho Euleriano")
-            print("*******************************************************************************************************")
 caminhoEuleriano(grafo)
